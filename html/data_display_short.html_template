@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>J-OBS Data Display by Ship Name</title>
+<style>
+ .red
+  {
+    color: red;
+    font-size: 2em;
+  }
+  .blue
+  {
+    color: blue;
+    font-weight: bold;
+  }
+  .green
+  {
+    color: green;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" href="/common/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/util.css" />
+#CLAS_BANNER#
+<script language="JavaScript" type="text/javascript">
+
+
+function submit_values(file_value,id)
+{
+  var count;
+//alert(id);
+  document.getElementById(id).style.color = "red";
+  document.forms[0].file.value=file_value;
+  var obElements = document.getElementsByClassName("ob");
+  for(count = 0; count < obElements.length; count++)
+  {
+    if (id != obElements[count].id)
+    {
+//    alert(count);
+//    alert(obElements[count].id);
+      document.getElementById(obElements[count].id).style.color = "black";
+    }
+  }
+}
+
+</script>
+
+<!-- Center major text -->
+
+<!-- Setup from to input synoptic ship weather and sea data -->
+<form
+ action="data_display_short_generator.cgi"
+ target="_blank"
+ method="post"
+ enctype="multipart/form-data">
+
+<input type="hidden" name="file">
+
+<table style="margin:auto; text-align:center;">
+<tr>
+<td>
+<h2>J-OBS Data Display</h2>
+<h3>14 Day Reach-Back</h3>
+<h4>By time of submission</h4>
+Data Form
+<br>
+<input type="radio" name="data_form" value="encode" checked> ENCODED
+<input type="radio" name="data_form" value="raw"> RAW
+<input type="radio" name="data_form" value="decode"> DECODED (excluding TAF)
+<br><br><input class="optional" type="submit" value="Submit">
+</td>
+</tr>
+</table>
+
+<table style="margin:auto; text-align:center;">
+<tr>
+<td>
+
+#INSERT#
+
+<input class="optional" type="submit" value="Submit">
+</td>
+</tr>
+</table>
+
+</form>
+
+#CLAS_BANNER#
+
+</body>
+
+</html>

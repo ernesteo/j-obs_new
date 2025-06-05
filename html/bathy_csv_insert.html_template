@@ -1,0 +1,224 @@
+     <tr>
+     <td>
+     <fieldset style="margin:auto; text-align:center;">
+     <legend style="margin:auto; text-align:center;"><b>Bathymetric CSV Sounding</b></legend>
+     <table  style="margin:auto; text-align:center;">
+     <tr style="text-align:center">
+     <td style="text-align:center">
+     <table style="text-align:center">
+<!-- ++++++++++++++++++++++++++++++++++++ -->
+     <tr style="text-align:center">
+<!-- ==================================== -->
+     <td style="text-align:center">
+       <table class="textsize" style="text-align:center"> 
+       <tr style="text-align:center">
+         <td style="text-align:center">
+         Latitude
+         DD : MM : SS
+         </td>
+         <td style="text-align:center">
+         Longitude
+         DDD:MM: SS
+         </td>
+       </tr>
+
+       <tr>
+         <td style="text-align:center"> 
+         <input tabindex="1" type="radio" name="lat_sign" value="N" CHECKED>N<input tabindex="1" type="radio" name="lat_sign" value="S">S
+         <input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_d" id="lat_d" onblur="check_int_range_state(this.value,0,90,'lat_d');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_m" id="lat_m" onblur="check_int_range_state(this.value,0,59,'lat_m');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_s" id="lat_s" onblur="check_int_range_state(this.value,0,59,'lat_s');">
+         </td>
+         <td style="text-align:center">
+         <input tabindex="1" type="radio" name="lon_sign" value="E" CHECKED>E<input tabindex="1" type="radio" name="lon_sign" value="W">W
+         <input tabindex="1" size="1" maxlength="3" type="TEXT" name="lon_d" id="lon_d" onblur="check_int_range_state(this.value,0,180,'lon_d');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lon_m" id="lon_m" onblur="check_int_range_state(this.value,0,59,'lon_m');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lon_s" id="lon_s" onblur="check_int_range_state(this.value,0,59,'lon_s');">
+         </td>
+       </tr>
+
+       <tr>
+         <td colspan="2" style="text-align:center">
+           <a href="../wmo_table_1770.html" target="BT_TYPE">Instrument type and equation coefficients:</a>
+           <br>
+<!--
+           <input type="radio" name="sw_xbt_inst_type_id" id="sw_xbt_inst_type_id" value="1" CHECKED>
+-->
+           <select tabindex="1" name="bt_type" id="bt_type">
+             <option value="///">/// --- no entry</option>
+             <option value="001">001 --- Sippican T-4</option>
+             <option value="002">002 --- Sippican T-4</option>
+             <option value="041">041 --- Sippican T-7</option>
+             <option value="042">042 --- Sippican T-7</option>
+             <option value="052">052 --- Sippican Deep Blue</option>
+             <option value="061">061 --- Sippican T-10</option>
+             <option value="421">421 --- Sparton XBT-4</option>
+             <option value="011">011 --- Sippican T-5</option>
+             <option value="021">021 --- Sippican Fast Deep</option>
+             <option value="031">031 --- Sippican T-6</option>
+             <option value="032">032 --- Sippican T-6</option>
+             <option value="051">051 --- Sippican Deep Blue</option>
+             <option value="071">071 --- Sippican T-11</option>
+             <option value="201">201 --- TSK T-4</option>
+             <option value="202">202 --- TSK T-4</option>
+             <option value="211">211 --- TSK T-6</option>
+             <option value="212">212 --- TSK T-6</option>
+             <option value="221">221 --- TSK T-7</option>
+             <option value="222">222 --- TSK T-7</option>
+             <option value="231">231 --- TSK T-5</option>
+             <option value="241">241 --- TSK T-10</option>
+             <option value="251">251 --- TSK  Deep Blue</option>
+             <option value="252">252 --- TSK  Deep Blue</option>
+             <option value="261">261 --- TSK  AXBT</option>
+             <option value="401">401 --- Sparton XBT-1</option>
+             <option value="411">411 --- Sparton XBT-3</option>
+             <option value="431">431 --- Sparton XBT-5</option>
+             <option value="441">441 --- Sparton XBT-5DB</option>
+             <option value="451">451 --- Sparton XBT-6</option>
+             <option value="461">461 --- Sparton XBT-7</option>
+             <option value="462">462 --- Sparton XBT-7</option>
+             <option value="471">471 --- Sparton XBT-7DB</option>
+             <option value="481">481 --- Sparton XBT-10</option>
+             <option value="491">491 --- Sparton XBT-20</option>
+             <option value="401">401 --- Sparton XBT-20DB</option>
+             <option value="510">510 --- Sparton 536 AXBT</option>
+             <option value="700">700 --- Sippican XCTD standard</option>
+             <option value="710">710 --- Sippican XCTD deep</option>
+             <option value="720">720 --- Sippican AXCTD</option>
+             <option value="730">730 --- Sippican SXCTD</option>
+             <option value="741">741 --- TSK XCTD</option>
+             <option value="751">751 --- TSK AXCTD</option>
+             <option value="800">800 --- Mechanical BT</option>
+             <option value="810">810 --- Hydrocast</option>
+             <option value="820">820 --- Thermistor Chain</option>
+             <option value="830">830 --- CTD</option>
+             <option value="831">831 --- CTD-P-ALACE float</option>
+             <option value="840">840 --- PROVOR</option>
+             <option value="841">841 --- PROVOR</option>
+             <option value="842">842 --- PROVOR</option>
+             <option value="845">845 --- Web Research</option>
+             <option value="846">846 --- Web Research</option>
+             <option value="847">847 --- Web Research</option>
+             <option value="850">850 --- SOLO</option>
+             <option value="851">851 --- SOLO</option>
+             <option value="852">852 --- SOLO</option>
+           </select>
+<!--
+           <input type="radio" name="sw_xbt_inst_type_id" id="sw_xbt_inst_type_id" value="2">
+           <input disabled size="1" maxlength="3" type="text" name="xbt_inst_type_id_2" id="xbt_inst_type_id_2">
+-->
+         </td>
+       </tr>
+
+       <tr>
+         <td colspan="2" style="text-align:center">
+           <a href="../wmo_table_4770.html" target="RCRDR">Water temperature profile recorder type:</a>
+           <br>
+<!--
+           <input type="radio" name="rcrdr_id" id="rcrdr_id" value="1" CHECKED>
+-->
+           <select tabindex="1" name="rcrdr" id="rcrdr">
+             <option value="//">// --- no entry</option>
+             <option value="99">99 --- unknown</option>
+             <option value="02">02 --- Sippican MK2A/SSQ-6</option>
+             <option value="04">04 --- Sippican AN/BHQ-7/MK8</option>
+             <option value="05">05 --- Sippican MK-12</option>
+             <option value="06">06 --- Sippican MK-21</option>
+             <option value="01">01 --- Sippican Strip Chart recorder</option>
+             <option value="03">03 --- Sippican MK-9</option>
+             <option value="10">10 --- Sparton SOC BT/SV Processor Model 100</option>
+             <option value="11">11 --- Lockheed-Sanders Model OL5005</option>
+             <option value="20">20 --- ARGOS XBT-ST</option>
+             <option value="21">21 --- CLS-ARGOS/Protecno XBT-ST Model-1</option>
+             <option value="22">22 --- CLS-ARGOS/Protecno XBT-ST Model-2</option>
+             <option value="30">30 --- BATHY Systems SA-810</option>
+             <option value="31">31 --- Scripps Metobyte Controller</option>
+             <option value="32">32 --- Murayama Denki Z-60-16 lll</option>
+             <option value="33">33 --- Murayama Denki Z-60-16 ll</option>
+             <option value="34">34 --- Protecno ETSM2</option>
+             <option value="35">35 --- Nautilus Marine Service NMS-XBT</option>
+             <option value="40">40 --- TSK MK-2A</option>
+             <option value="41">41 --- TSK MK-2S</option>
+             <option value="42">42 --- TSK MK-30</option>
+             <option value="43">43 --- TSK MK-30N</option>
+             <option value="45">45 --- TSK MK-200</option>
+             <option value="46">46 --- TSK MK-130</option>
+             <option value="48">48 --- TSK AXBT RECIEVER MK-300</option>
+             <option value="50">50 --- JMA ASTOS</option>
+             <option value="60">60 --- ARGOS communications sampling on up transit</option>
+             <option value="61">61 --- ARGOS communications sampling on down transit</option>
+             <option value="62">62 --- Orbcomm communications sampling on up transit</option>
+             <option value="63">63 --- Orbcomm communications sampling on down transit</option>
+           </select>
+<!--
+           <input type="radio" name="sw_rcdr_type_id" id="sw_rcdr_type_id" value="2">
+           <input disabled size="1" maxlength="2" type="text" name="rcdr_type_id_2" id="rcdr_type_id_2">
+-->
+         </td>
+       </tr>
+
+       </table>
+       </td>
+<!-- ==================================== -->
+     </tr>
+     </table>
+
+     <table style="margin:auto; text-align:center;">
+     <tr style="text-align:center;">
+<!-- ==================================== -->
+       <td style="text-align:center">
+       <fieldset>
+       <table class="textsize" style="text-align:center">
+
+       <tr>
+         <td style="text-align:center">
+         <input tabindex="1" type="radio" name="units" value="9" CHECKED>English(ft/F)
+         <br>
+         <input tabindex="1" type="radio" name="units" value="/">metric(m/C)
+         </td>
+       </tr>
+
+       <tr>
+         <td style="text-align:center">
+         Note: The corresponding
+         <br>
+         JJVV message will be
+         <br>
+         converted into metric units.
+         </td>
+       </tr>
+
+       <tr>
+       <td>
+         <br>
+         A single Excel CSV file can be submitted.
+         <br>
+         Prior to the data, the first line of the CSV file
+         <br>
+         must be Depth and Tempereature (case can be upper
+         <br>
+         or lower case) separated by a comma in that order.
+         <br>
+         The data submitted after the Depth,Temperature
+         <br>
+         line must be depth and temperature separated
+         <br>
+         by a comma in that order.
+         <br>
+         <br>
+         <input tabindex="1" size="77" type="file" name="upload_csv_file" id="upload_csv_file" onchange="check_file_ext(this.id,'txt');">
+       </td>
+       </tr>
+
+       </table>
+       </fieldset>
+     </td>
+     </tr>
+
+     </table>
+     </td>
+<!-- ==================================== -->
+     </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ -->
+
+     </table>
+     </fieldset>
+     </td>
+     </tr>
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>J-OBS Feedback</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="/common/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/util.css" />
+#CLAS_BANNER#
+
+<!-- Bring in the check functions -->
+<script src="../js/functions.js" language="JavaScript" type="text/javascript"></script>
+
+<!--
+Set the subsequent font as easier to read
+<font face="Verdana,Helvtica,sans-serif">
+-->
+
+<!-- Setup from to input synoptic ship weather and sea data -->
+<form
+ action="usage_survey_proc.cgi"
+ onsubmit="return check_usage_survey()"
+ method="post"
+ target="_blank"
+ enctype="multipart/form-data">
+
+<!--
+Center major text
+-->
+<h2 style="text-align:center">J-OBS Feedback</h2>
+
+<div style="text-align:center">
+
+<table style="margin:auto; text-align:center;">
+<tr>
+<td>
+
+<h4 style="text-align:left;">
+Thank you for using J-OBS.  The intent is to provide an intuitive interface.
+<br>
+<br>
+Was it easy to follow?
+<br>
+What changes would you suggest to improve clarity?
+<br>
+Did you discover any oversights?
+<br>
+Are there any missing data entry blocks that need to be added?
+<br>
+Were there any technical or software problems?
+<br>
+Were the data entry explanations clearly explained?
+<br>
+Your input is greatly appreciated
+
+</h4>
+</td>
+</tr>
+</table>
+
+<table style="margin:auto; text-align:center;">
+<tr>
+<td>
+<h4 style="text-align:left;">
+Rank:
+<input size="10" maxlength="10" type="text" name="rank" id="rank">
+Name:
+<input size="50" maxlength="50" type="text" name="name" id="name">
+<br>
+Email address:
+#CHECK_EMAIL#
+<br>
+Name of Ship or Station:
+<input size="30" maxlength="30" type="text" name="site" id="site">
+</h4>
+</td>
+</tr>
+</table>
+<h4>
+Comments:
+<br>
+<textarea rows="14" cols="117" name="comments" id="comments"></textarea>
+</h4>
+
+<input class="optional" type="submit" value="Submit">
+</div>
+</form>
+#CLAS_BANNER#
+</body>
+</html>

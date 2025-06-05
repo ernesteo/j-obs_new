@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>J-OBS Ship Location Form</title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="/common/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/util.css" />
+#CLAS_BANNER#
+<!-- Generic WMO form html file called by verious WMO cgi Perl scripts -->
+
+<!-- Bring in the variable color lists -->
+<script src="../js/basic_lists_#CLAS_LABEL#_loc.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Bring in the security check functions -->
+<script src="../js/functions_sec.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Bring in the check functions -->
+<script src="../js/functions.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Set up the CCS for the required,requested and optional form inputs -->
+<style type="TEXT/CSS">
+/*<![CDATA[*/
+.topleft          { position: absolute; top: 10px; left: 10px; }
+/*]]>*/
+</style>
+
+<!-- Setup form input -->
+<form
+  action="../cgi-bin/#DATA_TYPE#.cgi"
+  onsubmit="return check_data_list('#DATA_TYPE#')"
+  method="post"
+  target="wmo_form"
+  enctype="multipart/form-data">
+
+
+<!-- Let the cgi script know that the submitted form is initial -->
+
+<input type="hidden" name="server_send_time" value="#FORM_STAT#">
+<input type="hidden" name="client_receive_time">
+<input type="hidden" name="client_send_time">
+<input type="hidden" name="submit_type" value="#SUBMIT_TYPE#">
+<input type="hidden" name="title" value="#TITLE#">
+<input type="hidden" name="accept_location" value="unk">
+
+<!-- Start main html code -->
+<br>
+<br>
+<h1 style="text-align:center;">#TITLE#</h1>
+<h5 style="text-align:center;">#FORM_INTRO#</h5>
+<br>
+
+<!-- Setup primary table -->
+
+<fieldset style="margin:auto; text-align:center; width:60%;">
+<table style="margin:auto; text-align:center;">
+
+#COL_INSERT#
+
+#ORG_INSERT#
+
+#TIM_INSERT#
+
+#LOC_INSERT#
+
+#SEC_INSERT#
+
+</table>
+<!-- Finish primary table -->
+
+<div style="text-align: center">
+  <input type="submit" value="Process">
+  <br>
+</div>
+
+</fieldset>
+<!--- End of overall web page table -->
+
+<!-- display current date and time in upper left -->
+<div class="topleft"><h5><script language="JavaScript" type="text/javascript">set_time();</script></h5></div>
+
+<!-- Bring in the spplumental check functions -->
+<script src="../js/bckgrd_set.js" language="JavaScript" type="text/javascript"></script>
+
+</form>
+#CLAS_BANNER#
+
+</body>
+
+</html>

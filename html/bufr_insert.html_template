@@ -1,0 +1,29 @@
+<tr>
+<td>
+<!-- ************************************* BUFR file data upload *************************************** -->
+  <fieldset>
+  <legend><b>BUFR File</b></legend>
+  <table class="textsize">
+  <tr>
+  <td>BUFR type:
+  <select name="bufr_type" id="bufr_type">
+    <option value="rab">RAOB</option>
+    <option value="sfc">SURFACE</option>
+  </select>
+  <br>
+  </td>
+
+  <tr>
+  <td>
+    Only a single BUFR file can be submitted.
+    <br>
+    You can upload the data in a plain text file
+    <br>
+    <input tabindex="1" size="77" type="file" name="upload_bufr_file" content-type="application/octet-stream" id="upload_bufr_file" onchange="check_file_ext(this.id,'txt');">
+    <br>
+  </td>
+  </tr>
+  </table>
+  </fieldset>
+</td>
+</tr>

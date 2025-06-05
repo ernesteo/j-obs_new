@@ -1,0 +1,51 @@
+<tr>
+<td>
+<!-- *********************************** WMO enocded data upload *************************************** -->
+  <style> 
+   marquee {
+     height: 100px;
+     padding: 10px 0;
+     background-color: lightblue;
+   }
+  </style>
+  <fieldset>
+  <legend><b>WMO encoded message (#RPT_TYPE#)</b></legend>
+  <table class="textsize">
+  <tr>
+  <td>
+    Single or multiple WMO formatted reports can be submitted.
+    <br>
+    You can upload the data in a plain text file
+    <br>
+    <input tabindex="1" size="77" type="file" name="upload_wmo_file" id="upload_wmo_file" onchange="check_file_ext(this.id,'txt');">
+    <input onclick="clearFileInput()" type="button" value="Clear" />
+    <br>
+    <b>or</b>
+    <br>
+    or enter as text.
+    <br>
+    <textarea tabindex="1" rows="4" cols="100" name="upload_wmo_text" id="upload_wmo_text" onblur="check_wmo_message_state(this.id,'upload_wmo_text');"></textarea>
+    <br>
+    <center>
+    <table width="50%">
+    <tr>
+    <td>
+    <h2>
+    <marquee behavior="scroll" direction="up" scrollamount="1">
+    <font color="red">
+    Downstream processes at FNMOC require latitude/longitude information in order to properly ingest/decode data submitted via the J-OBS portal. TAFs submitted from mobile platforms do not contain this information natively within the original report (i.e. no lat/long). To ensure FNMOC can properly decode "Mobile TAFs" (i.e. MOBTAFs), three encoded fields are added to the original TAF submitted from mobile units via the J-OBS Portal (see the three highlighted fields shown in hyperlink below). Latitude and Longitude information is encoded using the same technique used to encode "MOBOB" as defined in NATO AWP-4 series. The encoding/insertion of these fields is completed by J-OBS; users do **not** need to (and should not try to) add these encoded fields to their TAF (J-OBS uses the latitude/longitude information entered in the fields above to generate/insert the encoded fields into the TAF uploaded to J-OBS). TAFs from mobile units submitted via J-OBS should continue to follow the standard/traditional WMO FM 51 format.
+    </font>
+    </marquee>
+    </h2>
+    </td>
+    </tr>
+    </table>
+    </center>
+    <br>
+    <a href="../static/mobtaf_format.png" target="MOBTAF">MOBTAF format</a>
+  </td>
+  </tr>
+  </table>
+  </fieldset>
+</td>
+</tr>

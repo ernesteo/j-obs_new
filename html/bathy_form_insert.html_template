@@ -1,0 +1,818 @@
+     <tr>
+     <td>
+     <fieldset style="margin:auto; text-align:center;">
+     <legend style="margin:auto; text-align:center;"><b>Bathymetric Sounding</b></legend>
+     <table  style="margin:auto; text-align:center;">
+     <tr style="text-align:center">
+     <td style="text-align:center">
+     <table style="text-align:center">
+<!-- ++++++++++++++++++++++++++++++++++++ -->
+     <tr style="text-align:center">
+<!-- ==================================== -->
+       <td style="text-align:center">
+       <table class="textsize" style="text-align:center"> 
+       <tr style="text-align:center">
+         <td style="text-align:center">
+         Latitude
+         DD : MM : SS
+         </td>
+         <td style="text-align:center">
+         Longitude
+         DDD:MM: SS
+         </td>
+       </tr>
+
+       <tr>
+         <td style="text-align:center"> 
+         <input tabindex="1" type="radio" name="lat_sign" value="N" CHECKED>N<input tabindex="1" type="radio" name="lat_sign" value="S">S
+         <input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_d" id="lat_d" onblur="check_int_range_state(this.value,0,90,'lat_d');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_m" id="lat_m" onblur="check_int_range_state(this.value,0,59,'lat_m');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lat_s" id="lat_s" onblur="check_int_range_state(this.value,0,59,'lat_s');">
+         </td>
+         <td style="text-align:center">
+         <input tabindex="1" type="radio" name="lon_sign" value="E" CHECKED>E<input tabindex="1" type="radio" name="lon_sign" value="W">W
+         <input tabindex="1" size="1" maxlength="3" type="TEXT" name="lon_d" id="lon_d" onblur="check_int_range_state(this.value,0,180,'lon_d');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lon_m" id="lon_m" onblur="check_int_range_state(this.value,0,59,'lon_m');"><b>:</b><input tabindex="1" size="1" maxlength="2" type="TEXT" name="lon_s" id="lon_s" onblur="check_int_range_state(this.value,0,59,'lon_s');">
+         </td>
+       </tr>
+
+       <tr>
+         <td colspan="2" style="text-align:center">
+           <a href="../wmo_table_1770.html" target="BT_TYPE">Instrument type and equation coefficients:</a>
+           <br>
+<!--
+           <input type="radio" name="sw_xbt_inst_type_id" id="sw_xbt_inst_type_id" value="1" CHECKED>
+-->
+           <select tabindex="1" name="bt_type" id="bt_type">
+             <option value="///">/// --- no entry</option>
+             <option value="001">001 --- Sippican T-4</option>
+             <option value="002">002 --- Sippican T-4</option>
+             <option value="041">041 --- Sippican T-7</option>
+             <option value="042">042 --- Sippican T-7</option>
+             <option value="052">052 --- Sippican Deep Blue</option>
+             <option value="061">061 --- Sippican T-10</option>
+             <option value="421">421 --- Sparton XBT-4</option>
+             <option value="011">011 --- Sippican T-5</option>
+             <option value="021">021 --- Sippican Fast Deep</option>
+             <option value="031">031 --- Sippican T-6</option>
+             <option value="032">032 --- Sippican T-6</option>
+             <option value="051">051 --- Sippican Deep Blue</option>
+             <option value="071">071 --- Sippican T-11</option>
+             <option value="201">201 --- TSK T-4</option>
+             <option value="202">202 --- TSK T-4</option>
+             <option value="211">211 --- TSK T-6</option>
+             <option value="212">212 --- TSK T-6</option>
+             <option value="221">221 --- TSK T-7</option>
+             <option value="222">222 --- TSK T-7</option>
+             <option value="231">231 --- TSK T-5</option>
+             <option value="241">241 --- TSK T-10</option>
+             <option value="251">251 --- TSK  Deep Blue</option>
+             <option value="252">252 --- TSK  Deep Blue</option>
+             <option value="261">261 --- TSK  AXBT</option>
+             <option value="401">401 --- Sparton XBT-1</option>
+             <option value="411">411 --- Sparton XBT-3</option>
+             <option value="431">431 --- Sparton XBT-5</option>
+             <option value="441">441 --- Sparton XBT-5DB</option>
+             <option value="451">451 --- Sparton XBT-6</option>
+             <option value="461">461 --- Sparton XBT-7</option>
+             <option value="462">462 --- Sparton XBT-7</option>
+             <option value="471">471 --- Sparton XBT-7DB</option>
+             <option value="481">481 --- Sparton XBT-10</option>
+             <option value="491">491 --- Sparton XBT-20</option>
+             <option value="401">401 --- Sparton XBT-20DB</option>
+             <option value="510">510 --- Sparton 536 AXBT</option>
+             <option value="700">700 --- Sippican XCTD standard</option>
+             <option value="710">710 --- Sippican XCTD deep</option>
+             <option value="720">720 --- Sippican AXCTD</option>
+             <option value="730">730 --- Sippican SXCTD</option>
+             <option value="741">741 --- TSK XCTD</option>
+             <option value="751">751 --- TSK AXCTD</option>
+             <option value="800">800 --- Mechanical BT</option>
+             <option value="810">810 --- Hydrocast</option>
+             <option value="820">820 --- Thermistor Chain</option>
+             <option value="830">830 --- CTD</option>
+             <option value="831">831 --- CTD-P-ALACE float</option>
+             <option value="840">840 --- PROVOR</option>
+             <option value="841">841 --- PROVOR</option>
+             <option value="842">842 --- PROVOR</option>
+             <option value="845">845 --- Web Research</option>
+             <option value="846">846 --- Web Research</option>
+             <option value="847">847 --- Web Research</option>
+             <option value="850">850 --- SOLO</option>
+             <option value="851">851 --- SOLO</option>
+             <option value="852">852 --- SOLO</option>
+           </select>
+<!--
+           <input type="radio" name="sw_xbt_inst_type_id" id="sw_xbt_inst_type_id" value="2">
+           <input disabled size="1" maxlength="3" type="text" name="xbt_inst_type_id_2" id="xbt_inst_type_id_2">
+-->
+         </td>
+       </tr>
+
+       <tr>
+         <td colspan="2" style="text-align:center">
+           <a href="../wmo_table_4770.html" target="RCRDR">Water temperature profile recorder type:</a>
+           <br>
+<!--
+           <input type="radio" name="rcrdr_id" id="rcrdr_id" value="1" CHECKED>
+-->
+           <select tabindex="1" name="rcrdr" id="rcrdr">
+             <option value="//">// --- no entry</option>
+             <option value="99">99 --- unknown</option>
+             <option value="02">02 --- Sippican MK2A/SSQ-6</option>
+             <option value="04">04 --- Sippican AN/BHQ-7/MK8</option>
+             <option value="05">05 --- Sippican MK-12</option>
+             <option value="06">06 --- Sippican MK-21</option>
+             <option value="01">01 --- Sippican Strip Chart recorder</option>
+             <option value="03">03 --- Sippican MK-9</option>
+             <option value="10">10 --- Sparton SOC BT/SV Processor Model 100</option>
+             <option value="11">11 --- Lockheed-Sanders Model OL5005</option>
+             <option value="20">20 --- ARGOS XBT-ST</option>
+             <option value="21">21 --- CLS-ARGOS/Protecno XBT-ST Model-1</option>
+             <option value="22">22 --- CLS-ARGOS/Protecno XBT-ST Model-2</option>
+             <option value="30">30 --- BATHY Systems SA-810</option>
+             <option value="31">31 --- Scripps Metobyte Controller</option>
+             <option value="32">32 --- Murayama Denki Z-60-16 lll</option>
+             <option value="33">33 --- Murayama Denki Z-60-16 ll</option>
+             <option value="34">34 --- Protecno ETSM2</option>
+             <option value="35">35 --- Nautilus Marine Service NMS-XBT</option>
+             <option value="40">40 --- TSK MK-2A</option>
+             <option value="41">41 --- TSK MK-2S</option>
+             <option value="42">42 --- TSK MK-30</option>
+             <option value="43">43 --- TSK MK-30N</option>
+             <option value="45">45 --- TSK MK-200</option>
+             <option value="46">46 --- TSK MK-130</option>
+             <option value="48">48 --- TSK AXBT RECIEVER MK-300</option>
+             <option value="50">50 --- JMA ASTOS</option>
+             <option value="60">60 --- ARGOS communications sampling on up transit</option>
+             <option value="61">61 --- ARGOS communications sampling on down transit</option>
+             <option value="62">62 --- Orbcomm communications sampling on up transit</option>
+             <option value="63">63 --- Orbcomm communications sampling on down transit</option>
+           </select>
+<!--
+           <input type="radio" name="sw_rcdr_type_id" id="sw_rcdr_type_id" value="2">
+           <input disabled size="1" maxlength="2" type="text" name="rcdr_type_id_2" id="rcdr_type_id_2">
+-->
+         </td>
+       </tr>
+
+       </table>
+       </td>
+<!-- ==================================== -->
+     </tr>
+     </table>
+
+     <table style="margin:auto; text-align:center;">
+     <tr style="text-align:center;">
+<!-- ==================================== -->
+       <td style="text-align:center">
+       <fieldset>
+       <table class="textsize" style="text-align:center">
+
+       <tr>
+         <td style="text-align:center">
+         <input tabindex="1" type="radio" name="units" value="9" CHECKED>English(ft/F)
+         <br>
+         <input tabindex="1" type="radio" name="units" value="/">metric(m/C)
+         </td>
+       </tr>
+
+       <tr>
+         <td style="text-align:center">
+         Note: The corresponding
+         <br>
+         JJVV message will be
+         <br>
+         converted into metric units.
+         </td>
+       </tr>
+
+       <tr>
+         <td style="text-align:center">
+         <br>
+         Depth
+         Temperature 
+         </td>
+       </tr>
+ 
+       <tr>
+         <td style="text-align:center">
+         <div style="overflow:auto;height:180px;">
+         <table>
+
+         <tr>
+           <td>0</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz0" id="zz0" onblur="check_zz_float_range_state(this.value,'zz0');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt0" id="tt0" onblur="check_tt_float_range_state(this.value,'tt0');"></td>
+         </tr>
+  
+         <tr>
+           <td>1</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz1" id="zz1" onblur="check_zz_float_range_state(this.value,'zz1');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt1" id="tt1" onblur="check_tt_float_range_state(this.value,'tt1');"></td>
+         </tr>
+  
+         <tr>
+           <td>2</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz2" id="zz2" onblur="check_zz_float_range_state(this.value,'zz2');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt2" id="tt2" onblur="check_tt_float_range_state(this.value,'tt2');"></td>
+         </tr>
+  
+         <tr>
+           <td>3</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz3" id="zz3" onblur="check_zz_float_range_state(this.value,'zz3');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt3" id="tt3" onblur="check_tt_float_range_state(this.value,'tt3');"></td>
+         </tr>
+  
+         <tr>
+           <td>4</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz4" id="zz4" onblur="check_zz_float_range_state(this.value,'zz4');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt4" id="tt4" onblur="check_tt_float_range_state(this.value,'tt4');"></td>
+         </tr>
+  
+         <tr>
+           <td>5</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz5" id="zz5" onblur="check_zz_float_range_state(this.value,'zz5');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt5" id="tt5" onblur="check_tt_float_range_state(this.value,'tt5');"></td>
+         </tr>
+  
+         <tr>
+           <td>6</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz6" id="zz6" onblur="check_zz_float_range_state(this.value,'zz6');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt6" id="tt6" onblur="check_tt_float_range_state(this.value,'tt6');"></td>
+         </tr>
+  
+         <tr>
+           <td>7</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz7" id="zz7" onblur="check_zz_float_range_state(this.value,'zz7');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt7" id="tt7" onblur="check_tt_float_range_state(this.value,'tt7');"></td>
+         </tr>
+  
+         <tr>
+           <td>8</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz8" id="zz8" onblur="check_zz_float_range_state(this.value,'zz8');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt8" id="tt8" onblur="check_tt_float_range_state(this.value,'tt8');"></td>
+         </tr>
+  
+         <tr>
+           <td>9</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz9" id="zz9" onblur="check_zz_float_range_state(this.value,'zz9');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt9" id="tt9" onblur="check_tt_float_range_state(this.value,'tt9');"></td>
+         </tr>
+  
+         <tr>
+           <td>10</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz10" id="zz10" onblur="check_zz_float_range_state(this.value,'zz10');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt10" id="tt10" onblur="check_tt_float_range_state(this.value,'tt10');"></td>
+         </tr>
+  
+         <tr>
+           <td>11</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz11" id="zz11" onblur="check_zz_float_range_state(this.value,'zz11');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt11" id="tt11" onblur="check_tt_float_range_state(this.value,'tt11');"></td>
+         </tr>
+  
+         <tr>
+           <td>12</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz12" id="zz12" onblur="check_zz_float_range_state(this.value,'zz12');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt12" id="tt12" onblur="check_tt_float_range_state(this.value,'tt12');"></td>
+         </tr>
+  
+         <tr>
+           <td>13</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz13" id="zz13" onblur="check_zz_float_range_state(this.value,'zz13');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt13" id="tt13" onblur="check_tt_float_range_state(this.value,'tt13');"></td>
+         </tr>
+  
+         <tr>
+           <td>14</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz14" id="zz14" onblur="check_zz_float_range_state(this.value,'zz14');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt14" id="tt14" onblur="check_tt_float_range_state(this.value,'tt14');"></td>
+         </tr>
+  
+         <tr>
+           <td>15</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz15" id="zz15" onblur="check_zz_float_range_state(this.value,'zz15');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt15" id="tt15" onblur="check_tt_float_range_state(this.value,'tt15');"></td>
+         </tr>
+  
+         <tr>
+           <td>16</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz16" id="zz16" onblur="check_zz_float_range_state(this.value,'zz16');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt16" id="tt16" onblur="check_tt_float_range_state(this.value,'tt16');"></td>
+         </tr>
+  
+         <tr>
+           <td>17</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz17" id="zz17" onblur="check_zz_float_range_state(this.value,'zz17');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt17" id="tt17" onblur="check_tt_float_range_state(this.value,'tt17');"></td>
+         </tr>
+  
+         <tr>
+           <td>18</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz18" id="zz18" onblur="check_zz_float_range_state(this.value,'zz18');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt18" id="tt18" onblur="check_tt_float_range_state(this.value,'tt18');"></td>
+         </tr>
+  
+         <tr>
+           <td>19</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz19" id="zz19" onblur="check_zz_float_range_state(this.value,'zz19');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt19" id="tt19" onblur="check_tt_float_range_state(this.value,'tt19');"></td>
+         </tr>
+  
+         <tr>
+           <td>20</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz20" id="zz20" onblur="check_zz_float_range_state(this.value,'zz20');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt20" id="tt20" onblur="check_tt_float_range_state(this.value,'tt20');"></td>
+         </tr>
+  
+         <tr>
+           <td>21</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz21" id="zz21" onblur="check_zz_float_range_state(this.value,'zz21');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt21" id="tt21" onblur="check_tt_float_range_state(this.value,'tt21');"></td>
+         </tr>
+  
+         <tr>
+           <td>22</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz22" id="zz22" onblur="check_zz_float_range_state(this.value,'zz22');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt22" id="tt22" onblur="check_tt_float_range_state(this.value,'tt22');"></td>
+         </tr>
+  
+         <tr>
+           <td>23</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz23" id="zz23" onblur="check_zz_float_range_state(this.value,'zz23');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt23" id="tt23" onblur="check_tt_float_range_state(this.value,'tt23');"></td>
+         </tr>
+  
+         <tr>
+           <td>24</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz24" id="zz24" onblur="check_zz_float_range_state(this.value,'zz24');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt24" id="tt24" onblur="check_tt_float_range_state(this.value,'tt24');"></td>
+         </tr>
+  
+         <tr>
+           <td>25</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz25" id="zz25" onblur="check_zz_float_range_state(this.value,'zz25');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt25" id="tt25" onblur="check_tt_float_range_state(this.value,'tt25');"></td>
+         </tr>
+  
+         <tr>
+           <td>26</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz26" id="zz26" onblur="check_zz_float_range_state(this.value,'zz26');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt26" id="tt26" onblur="check_tt_float_range_state(this.value,'tt26');"></td>
+         </tr>
+  
+         <tr>
+           <td>27</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz27" id="zz27" onblur="check_zz_float_range_state(this.value,'zz27');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt27" id="tt27" onblur="check_tt_float_range_state(this.value,'tt27');"></td>
+         </tr>
+  
+         <tr>
+           <td>28</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz28" id="zz28" onblur="check_zz_float_range_state(this.value,'zz28');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt28" id="tt28" onblur="check_tt_float_range_state(this.value,'tt28');"></td>
+         </tr>
+  
+         <tr>
+           <td>29</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz29" id="zz29" onblur="check_zz_float_range_state(this.value,'zz29');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt29" id="tt29" onblur="check_tt_float_range_state(this.value,'tt29');"></td>
+         </tr>
+  
+         <tr>
+           <td>30</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz30" id="zz30" onblur="check_zz_float_range_state(this.value,'zz30');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt30" id="tt30" onblur="check_tt_float_range_state(this.value,'tt30');"></td>
+         </tr>
+  
+         <tr>
+           <td>31</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz31" id="zz31" onblur="check_zz_float_range_state(this.value,'zz31');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt31" id="tt31" onblur="check_tt_float_range_state(this.value,'tt31');"></td>
+         </tr>
+  
+         <tr>
+           <td>32</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz32" id="zz32" onblur="check_zz_float_range_state(this.value,'zz32');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt32" id="tt32" onblur="check_tt_float_range_state(this.value,'tt32');"></td>
+         </tr>
+  
+         <tr>
+           <td>33</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz33" id="zz33" onblur="check_zz_float_range_state(this.value,'zz33');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt33" id="tt33" onblur="check_tt_float_range_state(this.value,'tt33');"></td>
+         </tr>
+  
+         <tr>
+           <td>34</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz34" id="zz34" onblur="check_zz_float_range_state(this.value,'zz34');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt34" id="tt34" onblur="check_tt_float_range_state(this.value,'tt34');"></td>
+         </tr>
+  
+         <tr>
+           <td>35</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz35" id="zz35" onblur="check_zz_float_range_state(this.value,'zz35');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt35" id="tt35" onblur="check_tt_float_range_state(this.value,'tt35');"></td>
+         </tr>
+  
+         <tr>
+           <td>36</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz36" id="zz36" onblur="check_zz_float_range_state(this.value,'zz36');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt36" id="tt36" onblur="check_tt_float_range_state(this.value,'tt36');"></td>
+         </tr>
+  
+         <tr>
+           <td>37</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz37" id="zz37" onblur="check_zz_float_range_state(this.value,'zz37');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt37" id="tt37" onblur="check_tt_float_range_state(this.value,'tt37');"></td>
+         </tr>
+  
+         <tr>
+           <td>38</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz38" id="zz38" onblur="check_zz_float_range_state(this.value,'zz38');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt38" id="tt38" onblur="check_tt_float_range_state(this.value,'tt38');"></td>
+         </tr>
+  
+         <tr>
+           <td>39</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz39" id="zz39" onblur="check_zz_float_range_state(this.value,'zz39');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt39" id="tt39" onblur="check_tt_float_range_state(this.value,'tt39');"></td>
+         </tr>
+  
+         <tr>
+           <td>40</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz40" id="zz40" onblur="check_zz_float_range_state(this.value,'zz40');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt40" id="tt40" onblur="check_tt_float_range_state(this.value,'tt40');"></td>
+         </tr>
+  
+         <tr>
+           <td>41</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz41" id="zz41" onblur="check_zz_float_range_state(this.value,'zz41');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt41" id="tt41" onblur="check_tt_float_range_state(this.value,'tt41');"></td>
+         </tr>
+  
+         <tr>
+           <td>42</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz42" id="zz42" onblur="check_zz_float_range_state(this.value,'zz42');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt42" id="tt42" onblur="check_tt_float_range_state(this.value,'tt42');"></td>
+         </tr>
+  
+         <tr>
+           <td>43</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz43" id="zz43" onblur="check_zz_float_range_state(this.value,'zz43');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt43" id="tt43" onblur="check_tt_float_range_state(this.value,'tt43');"></td>
+         </tr>
+  
+         <tr>
+           <td>44</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz44" id="zz44" onblur="check_zz_float_range_state(this.value,'zz44');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt44" id="tt44" onblur="check_tt_float_range_state(this.value,'tt44');"></td>
+         </tr>
+  
+         <tr>
+           <td>45</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz45" id="zz45" onblur="check_zz_float_range_state(this.value,'zz45');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt45" id="tt45" onblur="check_tt_float_range_state(this.value,'tt45');"></td>
+         </tr>
+  
+         <tr>
+           <td>46</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz46" id="zz46" onblur="check_zz_float_range_state(this.value,'zz46');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt46" id="tt46" onblur="check_tt_float_range_state(this.value,'tt46');"></td>
+         </tr>
+  
+         <tr>
+           <td>47</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz47" id="zz47" onblur="check_zz_float_range_state(this.value,'zz47');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt47" id="tt47" onblur="check_tt_float_range_state(this.value,'tt47');"></td>
+         </tr>
+  
+         <tr>
+           <td>48</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz48" id="zz48" onblur="check_zz_float_range_state(this.value,'zz48');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt48" id="tt48" onblur="check_tt_float_range_state(this.value,'tt48');"></td>
+         </tr>
+  
+         <tr>
+           <td>49</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz49" id="zz49" onblur="check_zz_float_range_state(this.value,'zz49');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt49" id="tt49" onblur="check_tt_float_range_state(this.value,'tt49');"></td>
+         </tr>
+  
+         <tr>
+           <td>50</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz50" id="zz50" onblur="check_zz_float_range_state(this.value,'zz50');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt50" id="tt50" onblur="check_tt_float_range_state(this.value,'tt50');"></td>
+         </tr>
+  
+         <tr>
+           <td>51</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz51" id="zz51" onblur="check_zz_float_range_state(this.value,'zz51');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt51" id="tt51" onblur="check_tt_float_range_state(this.value,'tt51');"></td>
+         </tr>
+  
+         <tr>
+           <td>52</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz52" id="zz52" onblur="check_zz_float_range_state(this.value,'zz52');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt52" id="tt52" onblur="check_tt_float_range_state(this.value,'tt52');"></td>
+         </tr>
+  
+         <tr>
+           <td>53</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz53" id="zz53" onblur="check_zz_float_range_state(this.value,'zz53');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt53" id="tt53" onblur="check_tt_float_range_state(this.value,'tt53');"></td>
+         </tr>
+  
+         <tr>
+           <td>54</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz54" id="zz54" onblur="check_zz_float_range_state(this.value,'zz54');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt54" id="tt54" onblur="check_tt_float_range_state(this.value,'tt54');"></td>
+         </tr>
+  
+         <tr>
+           <td>55</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz55" id="zz55" onblur="check_zz_float_range_state(this.value,'zz55');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt55" id="tt55" onblur="check_tt_float_range_state(this.value,'tt55');"></td>
+         </tr>
+  
+         <tr>
+           <td>56</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz56" id="zz56" onblur="check_zz_float_range_state(this.value,'zz56');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt56" id="tt56" onblur="check_tt_float_range_state(this.value,'tt56');"></td>
+         </tr>
+  
+         <tr>
+           <td>57</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz57" id="zz57" onblur="check_zz_float_range_state(this.value,'zz57');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt57" id="tt57" onblur="check_tt_float_range_state(this.value,'tt57');"></td>
+         </tr>
+  
+         <tr>
+           <td>58</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz58" id="zz58" onblur="check_zz_float_range_state(this.value,'zz58');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt58" id="tt58" onblur="check_tt_float_range_state(this.value,'tt58');"></td>
+         </tr>
+  
+         <tr>
+           <td>59</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz59" id="zz59" onblur="check_zz_float_range_state(this.value,'zz59');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt59" id="tt59" onblur="check_tt_float_range_state(this.value,'tt59');"></td>
+         </tr>
+  
+         <tr>
+           <td>60</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz60" id="zz60" onblur="check_zz_float_range_state(this.value,'zz60');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt60" id="tt60" onblur="check_tt_float_range_state(this.value,'tt60');"></td>
+         </tr>
+  
+         <tr>
+           <td>61</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz61" id="zz61" onblur="check_zz_float_range_state(this.value,'zz61');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt61" id="tt61" onblur="check_tt_float_range_state(this.value,'tt61');"></td>
+         </tr>
+  
+         <tr>
+           <td>62</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz62" id="zz62" onblur="check_zz_float_range_state(this.value,'zz62');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt62" id="tt62" onblur="check_tt_float_range_state(this.value,'tt62');"></td>
+         </tr>
+  
+         <tr>
+           <td>63</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz63" id="zz63" onblur="check_zz_float_range_state(this.value,'zz63');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt63" id="tt63" onblur="check_tt_float_range_state(this.value,'tt63');"></td>
+         </tr>
+  
+         <tr>
+           <td>64</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz64" id="zz64" onblur="check_zz_float_range_state(this.value,'zz64');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt64" id="tt64" onblur="check_tt_float_range_state(this.value,'tt64');"></td>
+         </tr>
+  
+         <tr>
+           <td>65</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz65" id="zz65" onblur="check_zz_float_range_state(this.value,'zz65');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt65" id="tt65" onblur="check_tt_float_range_state(this.value,'tt65');"></td>
+         </tr>
+  
+         <tr>
+           <td>66</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz66" id="zz66" onblur="check_zz_float_range_state(this.value,'zz66');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt66" id="tt66" onblur="check_tt_float_range_state(this.value,'tt66');"></td>
+         </tr>
+  
+         <tr>
+           <td>67</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz67" id="zz67" onblur="check_zz_float_range_state(this.value,'zz67');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt67" id="tt67" onblur="check_tt_float_range_state(this.value,'tt67');"></td>
+         </tr>
+  
+         <tr>
+           <td>68</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz68" id="zz68" onblur="check_zz_float_range_state(this.value,'zz68');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt68" id="tt68" onblur="check_tt_float_range_state(this.value,'tt68');"></td>
+         </tr>
+  
+         <tr>
+           <td>69</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz69" id="zz69" onblur="check_zz_float_range_state(this.value,'zz69');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt69" id="tt69" onblur="check_tt_float_range_state(this.value,'tt69');"></td>
+         </tr>
+  
+         <tr>
+           <td>70</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz70" id="zz70" onblur="check_zz_float_range_state(this.value,'zz70');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt70" id="tt70" onblur="check_tt_float_range_state(this.value,'tt70');"></td>
+         </tr>
+  
+         <tr>
+           <td>71</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz71" id="zz71" onblur="check_zz_float_range_state(this.value,'zz71');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt71" id="tt71" onblur="check_tt_float_range_state(this.value,'tt71');"></td>
+         </tr>
+  
+         <tr>
+           <td>72</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz72" id="zz72" onblur="check_zz_float_range_state(this.value,'zz72');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt72" id="tt72" onblur="check_tt_float_range_state(this.value,'tt72');"></td>
+         </tr>
+  
+         <tr>
+           <td>73</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz73" id="zz73" onblur="check_zz_float_range_state(this.value,'zz73');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt73" id="tt73" onblur="check_tt_float_range_state(this.value,'tt73');"></td>
+         </tr>
+  
+         <tr>
+           <td>74</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz74" id="zz74" onblur="check_zz_float_range_state(this.value,'zz74');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt74" id="tt74" onblur="check_tt_float_range_state(this.value,'tt74');"></td>
+         </tr>
+  
+         <tr>
+           <td>75</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz75" id="zz75" onblur="check_zz_float_range_state(this.value,'zz75');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt75" id="tt75" onblur="check_tt_float_range_state(this.value,'tt75');"></td>
+         </tr>
+  
+         <tr>
+           <td>76</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz76" id="zz76" onblur="check_zz_float_range_state(this.value,'zz76');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt76" id="tt76" onblur="check_tt_float_range_state(this.value,'tt76');"></td>
+         </tr>
+  
+         <tr>
+           <td>77</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz77" id="zz77" onblur="check_zz_float_range_state(this.value,'zz77');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt77" id="tt77" onblur="check_tt_float_range_state(this.value,'tt77');"></td>
+         </tr>
+  
+         <tr>
+           <td>78</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz78" id="zz78" onblur="check_zz_float_range_state(this.value,'zz78');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt78" id="tt78" onblur="check_tt_float_range_state(this.value,'tt78');"></td>
+         </tr>
+  
+         <tr>
+           <td>79</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz79" id="zz79" onblur="check_zz_float_range_state(this.value,'zz79');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt79" id="tt79" onblur="check_tt_float_range_state(this.value,'tt79');"></td>
+         </tr>
+  
+         <tr>
+           <td>80</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz80" id="zz80" onblur="check_zz_float_range_state(this.value,'zz80');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt80" id="tt80" onblur="check_tt_float_range_state(this.value,'tt80');"></td>
+         </tr>
+  
+         <tr>
+           <td>81</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz81" id="zz81" onblur="check_zz_float_range_state(this.value,'zz81');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt81" id="tt81" onblur="check_tt_float_range_state(this.value,'tt81');"></td>
+         </tr>
+  
+         <tr>
+           <td>82</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz82" id="zz82" onblur="check_zz_float_range_state(this.value,'zz82');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt82" id="tt82" onblur="check_tt_float_range_state(this.value,'tt82');"></td>
+         </tr>
+  
+         <tr>
+           <td>83</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz83" id="zz83" onblur="check_zz_float_range_state(this.value,'zz83');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt83" id="tt83" onblur="check_tt_float_range_state(this.value,'tt83');"></td>
+         </tr>
+  
+         <tr>
+           <td>84</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz84" id="zz84" onblur="check_zz_float_range_state(this.value,'zz84');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt84" id="tt84" onblur="check_tt_float_range_state(this.value,'tt84');"></td>
+         </tr>
+  
+         <tr>
+           <td>85</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz85" id="zz85" onblur="check_zz_float_range_state(this.value,'zz85');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt85" id="tt85" onblur="check_tt_float_range_state(this.value,'tt85');"></td>
+         </tr>
+  
+         <tr>
+           <td>86</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz86" id="zz86" onblur="check_zz_float_range_state(this.value,'zz86');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt86" id="tt86" onblur="check_tt_float_range_state(this.value,'tt86');"></td>
+         </tr>
+  
+         <tr>
+           <td>87</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz87" id="zz87" onblur="check_zz_float_range_state(this.value,'zz87');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt87" id="tt87" onblur="check_tt_float_range_state(this.value,'tt87');"></td>
+         </tr>
+  
+         <tr>
+           <td>88</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz88" id="zz88" onblur="check_zz_float_range_state(this.value,'zz88');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt88" id="tt88" onblur="check_tt_float_range_state(this.value,'tt88');"></td>
+         </tr>
+  
+         <tr>
+           <td>89</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz89" id="zz89" onblur="check_zz_float_range_state(this.value,'zz89');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt89" id="tt89" onblur="check_tt_float_range_state(this.value,'tt89');"></td>
+         </tr>
+  
+         <tr>
+           <td>90</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz90" id="zz90" onblur="check_zz_float_range_state(this.value,'zz90');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt90" id="tt90" onblur="check_tt_float_range_state(this.value,'tt90');"></td>
+         </tr>
+  
+         <tr>
+           <td>91</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz91" id="zz91" onblur="check_zz_float_range_state(this.value,'zz91');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt91" id="tt91" onblur="check_tt_float_range_state(this.value,'tt91');"></td>
+         </tr>
+  
+         <tr>
+           <td>92</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz92" id="zz92" onblur="check_zz_float_range_state(this.value,'zz92');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt92" id="tt92" onblur="check_tt_float_range_state(this.value,'tt92');"></td>
+         </tr>
+  
+         <tr>
+           <td>93</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz93" id="zz93" onblur="check_zz_float_range_state(this.value,'zz93');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt93" id="tt93" onblur="check_tt_float_range_state(this.value,'tt93');"></td>
+         </tr>
+  
+         <tr>
+           <td>94</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz94" id="zz94" onblur="check_zz_float_range_state(this.value,'zz94');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt94" id="tt94" onblur="check_tt_float_range_state(this.value,'tt94');"></td>
+         </tr>
+  
+         <tr>
+           <td>95</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz95" id="zz95" onblur="check_zz_float_range_state(this.value,'zz95');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt95" id="tt95" onblur="check_tt_float_range_state(this.value,'tt95');"></td>
+         </tr>
+  
+         <tr>
+           <td>96</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz96" id="zz96" onblur="check_zz_float_range_state(this.value,'zz96');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt96" id="tt96" onblur="check_tt_float_range_state(this.value,'tt96');"></td>
+         </tr>
+  
+         <tr>
+           <td>97</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz97" id="zz97" onblur="check_zz_float_range_state(this.value,'zz97');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt97" id="tt97" onblur="check_tt_float_range_state(this.value,'tt97');"></td>
+         </tr>
+  
+         <tr>
+           <td>98</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz98" id="zz98" onblur="check_zz_float_range_state(this.value,'zz98');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt98" id="tt98" onblur="check_tt_float_range_state(this.value,'tt98');"></td>
+         </tr>
+  
+         <tr>
+           <td>99</td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="zz99" id="zz99" onblur="check_zz_float_range_state(this.value,'zz99');"></td>
+           <td style="width:50%"><input tabindex="1" size="4" type="TEXT" name="tt99" id="tt99" onblur="check_tt_float_range_state(this.value,'tt99');"></td>
+         </tr>
+
+         </table>
+         </div>
+         </td>
+       </tr>
+
+       </table>
+       </fieldset>
+       </td>
+<!-- ==================================== -->
+     </tr>
+<!-- ++++++++++++++++++++++++++++++++++++ -->
+     </table>
+     </td>
+     </tr>
+
+     </table>
+     </fieldset>
+     </td>
+     </tr>

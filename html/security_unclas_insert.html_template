@@ -1,0 +1,94 @@
+<tr>
+<td>
+<!-- ***************************************** Security Instructions ***************************************** -->
+
+<fieldset>
+<legend><b>Security instructions#TRAINING#</b></legend>
+<table>
+  <tr>
+  <td style="text-align:left;">
+
+      <tr>
+      <td style="text-align:left;">Classification:</td>
+      <td style="text-align:left;">
+        <select tabindex="1" name="clas_type" id="clas_type" onchange="redo_cls(this.value);">
+          <option value="U">UNCLASSIFIED#TRAINING#</option>
+        </select>
+      </td>
+      </tr>
+
+      <tr>
+      <td style="text-align:left;">
+      <input #ABLE# type="radio" name="cls_sel" value="1" checked onfocus="reset_cls(1);">
+      <a href="../derived_from.html" target="CLS_DOC">Derived from:</a>
+      </td>
+
+      <td style="text-align:left;">
+        <input tabindex="1" size="86" maxlength="100" type="TEXT" name="cls_doc" id="cls_doc" onblur="check_str_state(this.value,'cls_doc');">
+      </td>
+      </tr>
+
+      <tr>
+      <td style="text-align:right;">
+        <a href="../caveats.html" target="CLS_CVT">Caveats:</a>
+      </td>
+      <td style="text-align:left;">
+         <input size="55" maxlength="100" type="TEXT" name="cls_cvt" id="cls_cvt">
+      </td>
+      </tr>
+
+
+      <tr>
+      <td style="text-align:left;">
+      <input #ABLE# type="radio" name="cls_sel" value="2" onfocus="reset_cls(2);">
+      <a href="../classified_by.html" target="CLS_ATH">Classified by:</a>
+      </td>
+
+      <td style="text-align:left;">
+        <input size="45" maxlength="55" type="TEXT" name="cls_ath" id="cls_ath" onblur="check_str_state(this.value,'cls_ath');">
+      </td>
+      </tr>
+
+      <tr>
+      <td style="text-align:right;">
+        <a href="../reason.html" target="CLS_RSN">Reason:</a>
+      </td>
+
+      <td style="text-align:left;">
+        <input size="25" maxlength="35" type="TEXT" name="cls_rsn" id="cls_rsn" onblur="check_str_state(this.value,'cls_rsn');">
+      </td>
+      </tr>
+
+      <tr>
+      <td style="text-align:right;">
+        <a href="../declassify.html" target="DCLS">Declassify</a>
+      </td>
+      <td style="text-align:left;">
+      <input #ABLE# type="radio" name="dcls_sel" value="2" onfocus="reset_dcls(2);">
+        on Year <input size="4" maxlength="4" type="text" name="dcls_yr" id="dcls_yr" onblur="check_int_range_state(this.value,2004,2050,'dcls_yr');" >
+        Month <input size="2" maxlength="3" type="text" name="dcls_mon" id="dcls_mon" onblur="check_int_range_state(this.value,1,12,'dcls_mon');" >
+        Day <input size="2" maxlength="2" type="TEXT" name="dcls_day" id="dcls_day" onblur="check_int_range_state(this.value,0,31,'dcls_day');">
+      </td>
+
+      </tr>
+      <tr>
+
+      <td></td>
+      <td style="text-align:left;">
+      <input #ABLE# type="radio" name="dcls_sel" value="1" checked onfocus="reset_dcls(1);">
+       in <input value="365" size="3" type="TEXT" name="dcls_tday" id="dcls_tday" onblur="check_int_state(this.value,'dcls_tday');">
+       days
+      </td>
+
+      </tr>
+      <tr>
+
+      <td style="text-align:right;">Remark</td>
+      <td style="text-align:left;">
+      <input #ABLE# type="radio" name="dcls_sel" value="3" onfocus="reset_dcls(3);">
+      <input #ABLE# size="50" maxlength="50" type="TEXT" name="dcls_txt" id="dcls_txt" onblur="check_str_state(this.value,'dcls_tday');">
+      </td>
+      </tr>
+
+</table>
+</fieldset>

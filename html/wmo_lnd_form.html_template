@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>J-OBS Land Short Form</title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="/common/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/util.css" />
+#CLAS_BANNER#
+<!-- Bring in the variable color lists -->
+<script src="../js/basic_lnd_lists_#CLAS_LABEL#.js" language="JavaScript" type="text/javascript"></script>
+<script src="../js/wmo_lists.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Bring in the security check functions -->
+<script src="../js/functions_sec.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Bring in the check functions -->
+<script src="../js/functions.js" language="JavaScript" type="text/javascript"></script>
+
+<!-- Set up the CCS for the required,requested and optional form inputs -->
+<style type="TEXT/CSS">
+/*<![CDATA[*/
+.topleft          { position: absolute; top: 10px; left: 10px; }
+/*]]>*/
+</style>
+
+<!-- Setup form input -->
+<form
+  action="../cgi-bin/#DATA_TYPE#.cgi"
+  onsubmit="return check_data_list('#DATA_TYPE#')"
+  method="post"
+  target="_blank"
+  enctype="multipart/form-data">
+
+
+<!-- Let the cgi script know that the submitted form is initial -->
+
+<input type="hidden" name="server_send_time" value="#FORM_STAT#">
+<input type="hidden" name="client_receive_time">
+<input type="hidden" name="client_send_time">
+<input type="hidden" name="submit_type" value="#SUBMIT_TYPE#">
+<input type="hidden" name="wmo_id" value="#WMO_ID#">
+<input type="hidden" name="title" value="#TITLE#">
+
+
+<!-- Start main html code -->
+<!--
+<center>
+<input type="button" value="640x480" onclick="window.resizeTo(640,480)">
+<input type="button" value="600x800" onclick="window.resizeTo(800,600)">
+<input type="button" value="1024x768" onclick="window.resizeTo(1024,768)">
+</center>
+-->
+<br>
+<br>
+<h1 style="text-align:center;">#TITLE#</h1>
+<h5 style="text-align:center;">If you have an encoded report you can enter/upload it using the form below.</h5>
+<br>
+
+
+<!-- Setup primary table -->
+
+<fieldset style="margin:auto; text-align:center; width:60%;">
+<table style="margin:auto; text-align:center;">
+
+#COL_INSERT#
+
+#ORG_INSERT#
+
+#SEC_INSERT#
+
+#WMO_INSERT#
+
+</table>
+<!-- Finish primary table -->
+
+<div style="text-align:center;">
+  <input type="submit" value="Process">
+  <br>
+  <input type="radio" name="results" value="submit" checked>Submit Observation
+  <br>
+  <input type="radio" name="results" value="message">Display Encoded Message Only (and decoded)
+  <br>
+  <input type="radio" name="results" value="full">Display Full Report
+</div>
+
+</fieldset>
+<!--- End of overall web page table -->
+
+<!-- display current date and time in upper left -->
+<!--
+<div class="topleft"><h5><script language="JavaScript" type="text/javascript">set_time();</script></h5></div>
+-->
+
+<!-- Bring in the spplumental check functions -->
+<script src="../js/bckgrd_set.js" language="JavaScript" type="text/javascript"></script>
+
+</form>
+#CLAS_BANNER#
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<tr>
+<td>
+<!-- ***************************************** Time Information **************************************** -->
+  <fieldset>
+  <legend><b>Time of observation (UTC/Zulu)</b></legend>
+  <table class="textsize">
+  <tr>
+
+  <td>
+    Year:
+    <input size="4" MAXLENGTH="4" type="TEXT" name="obs_yr" id="obs_yr" onblur="check_date_state('obs_yr');" >
+  </td>
+  <td>
+    Month:
+    <input size="2" MAXLENGTH="3" type="TEXT" name="obs_mo" id="obs_mo" onblur="check_date_state('obs_mo');" >
+  </td>
+  <td>
+    Day:
+    <input size="2" MAXLENGTH="2" type="TEXT" name="obs_day" id="obs_day" onblur="check_date_state('obs_day');">
+  </td>
+  <td>
+    Hour:
+    <input tabindex="1" size="2" MAXLENGTH="2" type="TEXT" name="obs_hr" id="obs_hr" onblur="check_date_state('obs_hr');">
+  </td>
+  <td>
+    Minute:
+    <input tabindex="1" size="2" MAXLENGTH="2" type="TEXT" name="obs_min" id="obs_min" onblur="check_date_state('obs_min');">
+    No observation older than 48 hours ago will be accepted
+  </td>
+
+  </tr>
+  </table>
+  </fieldset>
+</td>
+</tr>

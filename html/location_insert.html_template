@@ -1,0 +1,26 @@
+<tr>
+<td>
+<!-- ************************************** Location Information ************************************** -->
+  <fieldset>
+  <legend><b>Location of observation (UTC/Zulu)</b></legend>
+  <table class="textsize">
+  <tr>
+  <td>
+    Latitude and longitude in floating point degrees
+    <br>
+    Station position --- Latitude:
+    <input type="radio" name="lat_sign" value="N" CHECKED>N
+    <input type="radio" name="lat_sign" value="S">S
+    <input tabindex="1" size="7" type="TEXT" name="lat" id="lat" onblur="check_float_range_state(this.value,0,90,'lat');">
+          degrees
+          --- Longitude:
+    <input type="radio" name="lon_sign" value="E" CHECKED>E
+    <input type="radio" name="lon_sign" value="W">W
+    <input tabindex="1" size="7" type="TEXT" name="lon" id="lon" onblur="check_float_range_state(this.value,0,180,'lon');">
+          degrees
+  </td>
+  </tr>
+  </table>
+  </fieldset>
+</td>
+</tr>

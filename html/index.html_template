@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>J-OBS Home Page</title>
+</head>
+
+<body>
+
+<link rel="stylesheet" type="text/css" href="/common/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/util.css" />
+#CLAS_BANNER#
+
+<table style="margin:auto; text-align:center; width:60%;">
+<tr>
+<td>
+
+<h4 style="text-align:center;">
+<br>
+<br>
+<br>
+Welcome to the <b>Joint Observations Submission (J-OBS)</b>
+web user interface.
+<br>
+<br>
+This site is maintained by Fleet Numerical Meteorology
+and Oceanography Center (FNMOC). J-OBS web
+applications enable Joint military assets to submit
+meteorological and oceanographic observational data with
+specific classifications to a central site for assimilation
+and distribution.
+<br>
+<br>
+Individuals who wish to receive copies of their observations
+can do so by visiting either the NIPR CAGIPS page
+https://portal.fnmoc.navy.mil/cagips_2/
+or the SIPR CAGIPS page (for classified observations)
+https://portal.fnmoc.navy.smil.mil/cagips_2/
+or by contacting the Fleet Numerical CDO at (831) 657-1406/1407, 
+DSN 756-1406/1407, usn.monterey.flenummetoccenca.mbx.cdo@us.navy.mil
+or fnmoc.cdo.fct@navy.smil.mil
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</h4>
+
+</td>
+</tr>
+</table>
+
+
+<table style="margin:auto; text-align:center; width:40%;">
+<tr>
+
+<td style="vertical-align:top">
+SHIP APPLICATIONS
+<br>
+<a href='ship_sfc_form.cgi' target="SHIP_SFC">Ship's Surface Weather Observation</a>
+<br>
+<a href='ship_sfc.cgi' target="SHIP_SFC_ENC">Encoded Ship's Synoptic</a>
+<br>
+<a href='ship_raob.cgi' target="SHIP_RAOB">Encoded Upper Air Sounding</a>
+<br>
+<a href='bathy_form.cgi' target="BATHY">Bathy</a>
+<br>
+<a href='bathy.cgi' target="BATHY_ENC">Encoded Bathy</a>
+<br>
+<a href='bathy_csv.cgi' target="BATHY_CSV">CSV Bathy</a>
+<br>
+<a href='tesac.cgi' target="TESAC_ENC">Encoded Tesac</a>
+<br>
+<a href='ship_taf.cgi' target="SHIP_MOB_TAF">Ship Mobile TAF</a>
+</td>
+<td>
+</td>
+<td style="vertical-align:top">
+LAND MOBILE APPLICATIONS
+<br>
+<a href='lnd_mo_sfc.cgi' target="LND_MO_SFC">Encoded Surface Weather Observation</a>
+<br>
+<a href='lnd_mo_raob.cgi' target="LND_MO_RAOB">Encoded Upper Air Sounding</a>
+<br>
+<a href='lnd_mob_taf.cgi' target="LND_MOB_TAF">Land Mobile TAF</a>
+<br>
+</td>
+
+<td>
+</td>
+
+<!--
+<td style="vertical-align:top">
+AIRCRAFT APPLICATIONS
+<br>
+<a href='acft_amdar.cgi' target="AMDAR">Encoded AMDAR</a>
+</td>
+-->
+
+<td style="vertical-align:top">
+AIRCRAFT APPLICATIONS
+<br>
+<a href='xbt.cgi' target="BATHY">XBT</a>
+</td>
+
+<td style="vertical-align:top">
+BUFR FILE UPLOAD
+<br>
+<a href='bufr_shp.cgi' target="BUFR">Ship RAOB and SYNOPTIC</a>
+<br>
+<a href='bufr_lnd.cgi' target="BUFR">Land RAOB and SYNOPTIC</a>
+</td>
+
+</tr>
+</table>
+<br>
+<br>
+<div style="text-align:center;">
+<a href='counts.cgi' target="COUNTS">Counts Listing</a>
+<br>
+<a href='data_display.cgi' target="DATA_DISPLAY">Data Display</a>
+<br>
+<a href='data_display_short.cgi' target="DATA_DISPLAY_SHORT">Data Display by Ship Names</a>
+<br>
+<a href='ship_name_list.cgi' target="SHIP_NAME">Ship Name - Call Sign Table</a>
+<br>
+<a href='shp_loc.cgi' target="SHP_LOC_DISPLAY">Ship Location Entry</a>
+<br>
+<br>
+<a href='usage_survey.cgi' target="FEEDBACK">Feedback</a>
+<br>
+<br>
+<br>
+#CLAS_BANNER#
+</div>
+</body>
+
+</html>

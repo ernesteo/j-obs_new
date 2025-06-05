@@ -1,0 +1,843 @@
+<!-- ******************************************** Form 3141/3 Part 1 ******************************************** -->
+     <tr>
+     <td>
+     <fieldset>
+     <legend><b>Form 3141/3 Part 1</b></legend>
+     <table>
+
+        <tr>
+        <td style="text-align:center;">
+
+          This section is for hourly observations.
+          <br>
+          Input is based on <a href="../3144_1D_htm/toc.htm" target="TOC">United States Navy Manual for Ship's Surface Weather Observations - 3144.1D.</a> 
+          <br>
+          Latest version <a href="../3144_1D_htm/31441e.pdf" target="31441E">United States Navy Manual for Ship's Surface Weather Observations - 3144.1E.</a>
+          <br>
+          <br>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="text-align:left;">
+          (1) <a href="../3144_1D_htm/sec-2/text/sec2ch2.htm#2-2-1" target="RPT_TYP">Report type:</a>
+          <select tabindex="1" name="rpt_typ_id" id="rpt_typ_id" onchange="reset_parm([value]);">
+             <option value="1">METAR</option>
+             <option value="2">SPECI</option>
+             <option value="3">SPECI-aircraft mishap</option>
+             <option value="4">SPECI-collision at sea</option>
+             <option value="5">SPECI-man overboard</option>
+             <option value="6">SPECI-local requirement</option>
+          </select>
+          <br>
+
+          (3) <a HREF="../3144_1D_htm/sec-2/text/sec2ch8.htm#285" target="WND_DIR">Wind direction:</a>
+          <input tabindex="1" size="5" type="TEXT" name="wnd_dir" id="wnd_dir" onblur="check_int_range_state(this.value,0,359,'wnd_dir');">
+          degrees true
+          <br>
+
+          (4) <a HREF="../3144_1D_htm/sec-2/text/sec2ch8.htm#286" target="WND_SPD">Wind speed:</a>
+          <input tabindex="1" size="5" type="TEXT" name="wnd_spd" id="wnd_spd" onblur="check_int_range_state(this.value,0,199,'wnd_spd');">
+          knots
+<!--
+             <select name="wnd_units" id="wnd_units">
+               <option value="knots">knots</option>
+               <option value="m/s">m/s</option>
+             </select>
+-->
+             <select name="wnd_mthd" id="wnd_mthd">
+               <option value="measured">measured</option>
+               <option value="estimated">estimated</option>
+             </select>
+<!--
+             <select name="wnd_unit_id" id="wnd_unit_id">
+               <option value="4">knots - anemometer</option>
+               <option value="0">m/s - estimated</option>
+               <option value="1">m/s - anemometer</option>
+               <option value="3">knots - estimated</option>
+             </select>
+-->
+          <br>
+
+          (5) <a HREF="../3144_1D_htm/sec-2/text/sec2ch8.htm#287" target="WND_GST">Wind gust:</a>
+          <input type="radio" name="wnd_gst_type" value="G" CHECKED>G
+          <input type="radio" name="wnd_gst_type" value="Q">Q
+
+          <input tabindex="1" size="5" type="TEXT" name="wnd_gst" id="wnd_gst" onblur="check_int_range_state(this.value,0,199,'wnd_gst');">
+          knots
+<!--
+             <select name="wnd_gst_units" id="wnd_gst_units">
+               <option value="knots">knots</option>
+               <option value="m/s">m/s</option>
+             </select>
+-->
+          <br>
+
+          (6) <a HREF="../3144_1D_htm/sec-2/text/sec2ch8.htm#288" target="WND_VRB">Wind direction variability:</a>
+          <input tabindex="1" size="5" type="TEXT" name="wnd_vrb_1" id="wnd_vrb_1" onblur="check_int_range_state(this.value,0,359,'wnd_vrb_1');">
+         V
+          <input tabindex="1" size="5" type="TEXT" name="wnd_vrb_2" id="wnd_vrb_2" onblur="check_int_range_state(this.value,0,359,'wnd_vrb_2');">
+          degrees true
+          <br>
+
+          (7) <a HREF="../3144_1D_htm/sec-2/text/sec2ch4.htm#2-4-4" target="HORZ_SFC_VSBY">Visibility:</a>
+             <select tabindex="1" name="horz_sfc_vsby" id="horz_sfc_vsby" onblur="check_security_str_state(this.value,'horz_sfc_vsby');">
+               <option value=""></option>
+               <option value="10">10 nm</option>
+               <option value="9">9 nm</option>
+               <option value="8">8 nm</option>
+               <option value="7">7 nm</option>
+               <option value="6">6 nm</option>
+               <option value="5">5 nm</option>
+               <option value="4">4 nm</option>
+               <option value="3">3 nm</option>
+               <option value="2 1/2">2 1/2 nm</option>
+               <option value="2">2 nm</option>
+               <option value="1 1/2">1 1/2 nm</option>
+               <option value="1">1 nm</option>
+               <option value="1/2">1/2 nm</option>
+               <option value="1/4">1/4 nm</option>
+               <option value="1/8">1/8 nm</option>
+               <option value="1/16">1/16 nm</option>
+               <option value="0">0</option>
+             </select>
+            <input type="checkbox" name="horz_sfc_vsby_type" value="V">V
+            <input type="hidden" name="horz_sfc_vsby_type" value="">
+<!--
+          <input size="5" type="TEXT" name="horz_sfc_vsby" id="horz_sfc_vsby" onblur="check_float_range_state(this.value,0,10,'horz_sfc_vsby');">
+          nautical miles
+-->
+<!--
+            <select name="horz_sfc_vsby_units" id="horz_sfc_vsby_units">
+              <option value="nmiles">nmiles</option>
+              <option value="meters">meters</option>
+              <option value="yards">yards</option>
+            </select>
+-->
+          <br>
+
+          (9) <a HREF="../3144_1D_htm/sec-2/text/sec2ch5.htm#2-5-3" target="PRESNT_WX">Present Weather:</a>
+          <input tabindex="1" size="20" MAXLENGTH="20" type="TEXT" name="prsnt_wx" id="prsnt_wx" onblur="check_security_str_state(this.value,'prsnt_wx');">
+          <br>
+
+          (10) <a HREF="../3144_1D_htm/sec-2/text/sec2ch3.htm#2-3-7" target="SKY_CDN">Sky condition:</a>
+          <input tabindex="1" size="40" MAXLENGTH="40" type="TEXT" name="sky_cdn" id="sky_cdn" onblur="check_security_str_state(this.value,'sky_cdn');">
+          <br>
+
+            (11) <a HREF="../3144_1D_htm/sec-2/text/sec2ch7.htm#276" target="AIR_TEMP">Temperature:</a>
+            <input type="checkbox" name="air_temp_sign" value="M">M
+            <input type="hidden" name="air_temp_sign" value="">
+            <input tabindex="1" size="5" type="TEXT" name="air_temp" id="air_temp" onblur="check_float_range_state(this.value,0,49,'air_temp');">
+            C
+            <br>
+
+            (12) <a HREF="../3144_1D_htm/sec-2/text/sec2ch7.htm#277" target="DWPT">Dew point temperature:</a>
+            <input type="checkbox" name="dwpt_sign" value="M">M
+            <input type="hidden" name="dwpt_sign" value="">
+            <input tabindex="1" size="5" type="TEXT" name="dwpt" id="dwpt" onblur="check_float_range_state(this.value,0,35,'dwpt');">
+            C
+            <br>
+
+            (20) <a HREF="../3144_1D_htm/sec-2/text/sec2ch7.htm#278" target="WET_BULB">Wet bulb temperature:</a>
+            <input type="checkbox" name="wet_bulb_temp_sign" value="M">M
+            <input type="hidden" name="wet_bulb_temp_sign" value="">
+            <input tabindex="1" size="5" type="TEXT" name="wet_bulb_temp" id="wet_bulb_temp" onblur="check_float_range_state(this.value,0,35,'wet_bulb_temp');">
+            C
+            <br>
+
+            (13) <a HREF="../3144_1D_htm/sec-2/text/sec2ch6.htm#266" target="ALT_SET">Altimeter setting:</a>
+            <input type="checkbox" name="alt_set_type" value="E">E
+            <input type="hidden" name="alt_set_type" value="">
+            <input tabindex="1" size="5" type="TEXT" name="alt_set" id="alt_set" onblur="check_int_range_state(this.value,2600,3200,'alt_set');">
+            1/100 inches of mercury
+            <br>
+
+            (14) <a HREF="../3144_1D_htm/sec-2/text/sec2ch5.htm#2-5-4" target="RMRKS">Remarks and supplemental data:</a>
+            <input tabindex="1" size="60" MAXLENGTH="60" type="TEXT" name="rmrks" id="rmrks" onblur="check_security_str_state(this.value,'rmrks');">
+            <br>
+
+            (22) <a HREF="../3144_1D_htm/sec-2/text/sec2ch6.htm#267" target="STN_LVL_PRS">Station level pressure:</a>
+            <input type="checkbox" name="stn_lvl_pres_type" value="E">E
+            <input type="hidden" name="stn_lvl_pres_type" value="">
+            <input tabindex="1" size="7" type="TEXT" name="stn_lvl_pres" id="stn_lvl_pres" onblur="check_float_range_state(this.value,27,32,'stn_lvl_pres');">
+            inches of mercury
+            <br>
+
+            (22a) <a HREF="../3144_1D_htm/sec-2/text/sec2ch6.htm#265" target="SEA_LVL_PRS">Sea level pressure:</a>
+            <input tabindex="1" size="7" type="TEXT" name="sea_lvl_pres" id="sea_lvl_pres" onblur="check_int_range_state(this.value,8700,10850,'sea_lvl_pres');">
+            1/10 hPa (NOTE: Vice what is stated in the 3144.1, for proper encoding, please enter full pressure observation (e.g. enter 10132 for 1013.2 hPa))
+            <br>
+
+            (17) <a HREF="../3144_1D_htm/sec-2/text/sec2ch3.htm#2-3-8" target="TOT_CLD_AMT">Total sky cover:</a>
+            <select tabindex="1" name="tot_cld_amt_id" id="tot_cld_amt_id" onblur="check_security_str_state(this.value,'tot_cld_amt_id');">
+              <option value="/">not made</option>
+              <option value="0">0</option>
+              <option value="1">1/8</option>
+              <option value="2">2/8</option>
+              <option value="3">3/8</option>
+              <option value="4">4/8</option>
+              <option value="5">5/8</option>
+              <option value="6">6/8</option>
+              <option value="7">7/8</option>
+              <option value="8">8/8</option>
+              <option value="9">obscured</option>
+            </select>
+
+          <br>
+          (A) <a HREF="../3144_1D_htm/sec-2/text/sec2ch10.htm#2102" target="LAT_LON">Ship's position</a> --- Latitude:
+          <input type="radio" name="lat_sign" value="N" CHECKED>N
+          <input type="radio" name="lat_sign" value="S">S
+          <input tabindex="1" size="7" type="TEXT" name="lat" id="lat" onblur="check_float_range_state(this.value,0,90,'lat');">
+          degrees
+          --- Longitude:
+          <input type="radio" name="lon_sign" value="E" CHECKED>E
+          <input type="radio" name="lon_sign" value="W">W
+          <input tabindex="1" size="7" type="TEXT" name="lon" id="lon" onblur="check_float_range_state(this.value,0,1800,'lon');">
+          degrees
+          <br>
+
+          (B) <a HREF="../3144_1D_htm/sec-2/text/sec2ch10.htm#2103" target="MV_PLFM_DIR">Ship's course (past 1 hour):</a>
+          <input tabindex="1" size="6" type="TEXT" name="mv_plfm_dir_1" id="mv_plfm_dir_1" onblur="check_int_range_state(this.value,0,359,'mv_plfm_dir_1');">
+          degrees true
+          <br>
+
+          (C) <a HREF="../3144_1D_htm/sec-2/text/sec2ch10.htm#2104" target="MV_PLFM_SPD">Ship's speed (past 1 hour):</a>
+          <input tabindex="1" size="6" type="TEXT" name="mv_plfm_spd_1" id="mv_plfm_spd_1" onblur="check_int_range_state(this.value,0,50,'mv_plfm_spd_1');">
+          knots
+<!--
+          <select name="mv_plfm_spd_1_units" id="mv_plfm_spd_1_units">
+            <option value="knots">knots</option>
+            <option value="m/s">m/s</option>
+            <option value="km/hr">km/hr</option>
+            <option value="mi/hr">mi/hr</option>
+          </select>
+-->
+          <br>
+
+          (D) <a HREF="../3144_1D_htm/sec-2/text/sec2ch7.htm#279" target="SEA_TEMP">Sea temperature:</a>
+          <input tabindex="1" size="5" type="TEXT" name="sea_temp" id="sea_temp" onblur="check_float_range_state(this.value,-5,45.0,'sea_temp');">
+          C
+<!--
+          <input type="radio" name="sea_temp_units" id="sea_temp_units" value="C" CHECKED>C
+          <input type="radio" name="sea_temp_units" id="sea_temp_units" value="F">F
+-->
+          <br>
+
+          (E) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#294" target="WND_WAV_PER">Wind wave period</a>
+          <input tabindex="1" size="5" type="TEXT" name="wnd_wav_per" id="wnd_wav_per" onblur="check_int_range_state(this.value,0,99,'wnd_wav_per');">
+          sec
+          <br>
+
+          (E) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#294" target="WND_WAV_HT">Wind wave height:</a>
+          <input tabindex="1" size="5" type="TEXT" name="wnd_wav_ht" id="wnd_wav_ht" onblur="check_int_range_state(this.value,0,20,'wnd_wav_ht');">
+          feet
+<!--
+          <input type="radio" name="wnd_wav_ht_units" id="wnd_wav_ht_units" value="ft" CHECKED>ft
+          <input type="radio" name="wnd_wav_ht_units" id="wnd_wav_ht_units" value="m">m
+-->
+          <br>
+
+          (F) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="PRI_SWL_WAV_DIR">Primary wave swell direction;</a>
+          <input tabindex="1" size="5" type="TEXT" name="pri_swl_wav_dir" id="pri_swl_wav_dir" onblur="check_int_range_state(this.value,0,359,'pri_swl_wav_dir');">
+          degrees true
+          <br>
+
+          (F) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="PRI_SWL_WAV_PER">Primary wave swell period:</a>
+          <input tabindex="1" size="5" type="TEXT" name="pri_swl_wav_per" id="pri_swl_wav_per" onblur="check_int_range_state(this.value,1,60,'pri_swl_wav_per');">
+          sec
+          <br>
+
+          (F) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="PRI_SWL_WAV_HT">Primary wave swell height:</a>
+          <input tabindex="1" size="5" type="TEXT" name="pri_swl_wav_ht" id="pri_swl_wav_ht" onblur="check_int_range_state(this.value,0,50,'pri_swl_wav_ht');">
+          feet
+<!--
+          <input type="radio" name="pri_swl_wav_ht_units" id="pri_swl_wav_ht_units" value="ft" CHECKED>ft
+          <input type="radio" name="pri_swl_wav_ht_units" id="pri_swl_wav_ht_units" value="m">m
+-->
+          <br>
+
+          (G) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="SEC_SWL_WAV_DIR">Secondary wave swell direction:</a>
+          <input tabindex="1" size="5" type="TEXT" name="scdy_swl_wav_dir" id="scdy_swl_wav_dir" onblur="check_int_range_state(this.value,0,359,'scdy_swl_wav_dir');">
+          degrees true
+          <br>
+
+          (G) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="SEC_SWL_WAV_PER">Secondary wave swell period:</a>
+          <input tabindex="1" size="5" type="TEXT" name="scdy_swl_wav_per" id="scdy_swl_wav_per" onblur="check_int_range_state(this.value,1,60,'scdy_swl_wav_per');">
+          sec
+
+          <br>
+          (G) <a HREF="../3144_1D_htm/sec-2/text/sec2ch9.htm#295" target="SEC_SWL_WAV_HT">Secondary wave swell height:</a>
+          <input tabindex="1" size="5" type="TEXT" name="scdy_swl_wav_ht" id="scdy_swl_wav_ht" onblur="check_int_range_state(this.value,0,50,'scdy_swl_wav_ht');">
+          feet
+<!--
+          <input type="radio" name="scdy_swl_wav_ht_units" id="scdy_swl_wav_ht_units" value="ft" CHECKED>ft
+          <input type="radio" name="scdy_swl_wav_ht_units" id="scdy_swl_wav_ht_units" value="m">m
+-->
+          
+
+        </td>
+        </tr>
+<!-- ============================================= -->
+
+     </table>
+     </fieldset>
+     </td>
+     </tr>
+
+
+
+
+<!-- ******************************************** Form 3141/3 Part 2 ******************************************** -->
+     <tr>
+     <td>
+     <fieldset>
+     <legend><b>Form 3141/3 Part 2</b></legend>
+     <table class="textsize">
+     <tr>
+     <td style="text-align:center;">
+     This section is for observations taken for 00z, 03z, etc.  It is optional for other hours.
+     <br>
+     Input is based on <a href="../3144_1D_htm/toc.htm" target="TOC">United States Navy Manual for Ship's Surface Weather Observations - 3144.1D.</a> 
+     <br>
+     Latest version <a href="../3144_1D_htm/31441e.pdf" target="31441E">United States Navy Manual for Ship's Surface Weather Observations - 3144.1E.</a>
+     <br>
+     <br>
+     <br>
+
+     </td>
+     </tr>
+
+     <tr>
+     <td style="text-align:left;">
+
+<!--
+          i<sub>w</sub> - <a href="../wmo_table_1855.html" target="WND_ID">Wind indicator:</a>
+          <select name="wnd_id" id="wnd_id">
+            <option value=""></option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+          <br>
+
+          i<sub>x</sub> - <a href="../wmo_table_1860.html" target="STN_TYPE">Weather data indicator:</a>
+          <select name="stn_type_id" id="stn_type_id">
+            <option value=""></option>
+            <option value="1">1</option>
+            <option value="3">3</option>
+          </select>
+          <br>
+-->
+          h - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-1c" target="CLD_BASE_HT">Height of lowest cloud:</a>
+          <select tabindex="1" name="cld_base_ht_id" id="cld_base_ht_id">
+            <option value="/">/ - unknown</option>
+            <option value="0">0 -    0 -   99 ft</option>
+            <option value="1">1 -  100 -  299 ft</option>
+            <option value="2">2 -  300 -  699 ft</option>
+            <option value="3">3 -  700 -  999 ft</option>
+            <option value="4">4 - 1000 - 1999 ft</option>
+            <option value="5">5 - 2000 - 3299 ft</option>
+            <option value="6">6 - 3300 - 4899 ft</option>
+            <option value="7">7 - 4900 - 6499 ft</option>
+            <option value="8">8 - 6500 - 7999 ft</option>
+            <option value="9">9 - >8000 ft/none</option>
+          </select>
+          <br>
+
+          VV - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-1d" target="HORZ_SFC_VSBY">Visibility</a>
+          <select tabindex="1" name="horz_sfc_vsby_id" id="horz_sfc_vsby_id">
+            <option value="//">// -           unknown</option>
+            <option value="90">90 - less than 1/16 nm</option>
+            <option value="91">91 -           1/16 nm</option>
+            <option value="92">92 -            1/8 nm</option>
+            <option value="93">93 -            1/4 nm</option>
+            <option value="94">94 -            1/2 nm</option>
+            <option value="95">95 -     1 or 1 1/2 nm</option>
+            <option value="96">96 - 2, 2 1/2, or 3 nm</option>
+            <option value="97">97 -  5, 6, 7, or 8 nm</option>
+            <option value="98">98 -        9 or 10 nm</option>
+            <option value="99">99 -      not reported</option>
+          </select>
+          <br>
+
+          a - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-6a" target="PRS_TDCY_CHR">3-hour pressure tendency characteristic:</a>
+          <select tabindex="1" name="pres_tdcy_char_id" id="pres_tdcy_char_id">
+            <option value=""></option>
+            <option value="0">0 - Incrs, then dcrs; press the same / higher</option>
+            <option value="1">1 - Incrs, then stdy; / Incrs then Incrs slowly</option>
+            <option value="2">2 - Incrs, steadily / unsteadily</option>
+            <option value="3">3 - Dcrs / stdy, then Incrs; / Incrs, then Incrs rapidly</option>
+            <option value="4">4 - Stdy; press the same</option>
+            <option value="5">5 - Dcrs, then Incrs; press the same / lower</option>
+            <option value="6">6 - Dcrs, then stdy; / dcrs, then dcrs slowly</option>
+            <option value="7">7 - Dcrs, steadily / unsteadily</option>
+            <option value="8">8 - Stdy / Incrs, then dcrs; / dcrs, then dcrs rapidly</option>
+          </select>
+          <br>
+
+          ppp - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-6b" target="PRS_TDCY_AMT">3-hour pressure change:</a>
+          <input tabindex="1" size="7" type="TEXT" name="pres_tdcy_amt" id="pres_tdcy_amt" onblur="check_int_range_state(this.value,0,49,'pres_tdcy_amt');">
+          1/10 hPa
+          <br>
+
+          ww - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-7b" target="PRES_WX">Present Weather:</a>
+            <select tabindex="1" name="pres_wx_id" id="pres_wx_id" onblur="check_security_str_state(this.value,'pres_wx_id');">
+              <option value=""></option>
+              <option value="00">00</option>
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              <option value="06">06</option>
+              <option value="07">07</option>
+              <option value="08">08</option>
+              <option value="09">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+              <option value="32">32</option>
+              <option value="33">33</option>
+              <option value="34">34</option>
+              <option value="35">35</option>
+              <option value="36">36</option>
+              <option value="37">37</option>
+              <option value="38">38</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
+              <option value="47">47</option>
+              <option value="48">48</option>
+              <option value="49">49</option>
+              <option value="50">50</option>
+              <option value="51">51</option>
+              <option value="52">52</option>
+              <option value="53">53</option>
+              <option value="54">54</option>
+              <option value="55">55</option>
+              <option value="56">56</option>
+              <option value="57">57</option>
+              <option value="58">58</option>
+              <option value="59">59</option>
+              <option value="60">60</option>
+              <option value="61">61</option>
+              <option value="62">62</option>
+              <option value="63">63</option>
+              <option value="64">64</option>
+              <option value="65">65</option>
+              <option value="66">66</option>
+              <option value="67">67</option>
+              <option value="68">68</option>
+              <option value="69">69</option>
+              <option value="70">70</option>
+              <option value="71">71</option>
+              <option value="72">72</option>
+              <option value="73">73</option>
+              <option value="74">74</option>
+              <option value="75">75</option>
+              <option value="76">76</option>
+              <option value="77">77</option>
+              <option value="78">78</option>
+              <option value="79">79</option>
+              <option value="80">80</option>
+              <option value="81">81</option>
+              <option value="82">82</option>
+              <option value="83">83</option>
+              <option value="84">84</option>
+              <option value="85">85</option>
+              <option value="86">86</option>
+              <option value="87">87</option>
+              <option value="88">88</option>
+              <option value="89">89</option>
+              <option value="90">90</option>
+              <option value="91">91</option>
+              <option value="92">92</option>
+              <option value="93">93</option>
+              <option value="94">94</option>
+              <option value="95">95</option>
+              <option value="96">96</option>
+              <option value="97">97</option>
+              <option value="98">98</option>
+              <option value="99">99</option>
+            </select>
+            <br>
+
+            W<sub>1</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-7c" target="PAST_WX">Past weather, primary</a>
+            <select tabindex="1" name="past_wx_id_1" id="past_wx_id_1" onblur="check_security_str_state(this.value,'past_wx_id_1');">
+              <option value=""></option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <br>
+
+            W<sub>2</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-7c" target="PAST_WX">Past weather, secondary</a>
+            <select tabindex="1" name="past_wx_id_2" id="past_wx_id_2" onblur="check_security_str_state(this.value,'past_wx_id_2');">
+              <option value=""></option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+            </select>
+            <br>
+
+          N<sub>h</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-8b" target="LOW_CLD_AMT">C<sub>L</sub> (or C<sub>M</sub>) cloud amount:</a>
+          <select tabindex="1" name="low_cld_amt_id" id="low_cld_amt_id">
+            <option value="/">not made</option>
+            <option value="0">0 - 0</option>
+            <option value="1">1 - 1/8</option>
+            <option value="2">2 - 2/8</option>
+            <option value="3">3 - 3/8</option>
+            <option value="4">4 - 4/8</option>
+            <option value="5">5 - 5/8</option>
+            <option value="6">6 - 6/8</option>
+            <option value="7">7 - 7/8</option>
+            <option value="8">8 - 8/8</option>
+            <option value="9">9 - obscured</option>
+          </select>
+          <br>
+
+          C<sub>L</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-8c" target="LOW_CLD_TYPE">Low cloud type:</a>
+          <select tabindex="1" name="low_cld_type_id" id="low_cld_type_id">
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          C<sub>M</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-8d" target="MID_CLD_TYPE">Mid cloud type:</a>
+          <select tabindex="1" name="mid_cld_type_id" id="mid_cld_type_id">
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          C<sub>H</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch3.htm#3-3-1-8e" target="HI_CLD_TYPE">High cloud type:</a>
+          <select tabindex="1" name="hi_cld_type_id" id="hi_cld_type_id">
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          D<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-1b" target="MV_PLFM_DIR">Ship's course made good (past 3 hours):</a>
+          <select tabindex="1" name="mv_plfm_dir_id" id="mv_plfm_dir_id">
+            <option value="/">/ - displacement not reported</option>
+            <option value="0">0 - stationary</option>
+            <option value="1">1 - NE</option>
+            <option value="2">2 - E</option>
+            <option value="3">3 - SE</option>
+            <option value="4">4 - S</option>
+            <option value="5">5 - SW</option>
+            <option value="6">6 - W</option>
+            <option value="7">7 - NW</option>
+            <option value="8">8 - N</option>
+            <option value="9">9 - unknown</option>
+          </select>
+          <br>
+
+          v<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-1c" target="MV_PLFM_SPD">Ship's average speed made good (past 3 hours):</a>
+          <select tabindex="1" name="mv_plfm_spd_id" id="mv_plfm_spd_id">
+            <option value="/">/ - not reported</option>
+            <option value="0">0 - 0 knot</option>
+            <option value="1">1 - 1-5 knots</option>
+            <option value="2">2 - 6-10 knots</option>
+            <option value="3">3 - 11-15 knots</option>
+            <option value="4">4 - 16-20 knots</option>
+            <option value="5">5 - 21-25 knots</option>
+            <option value="6">6 - 26-30 knots</option>
+            <option value="7">7 - 31-35 knots</option>
+            <option value="8">8 - 36-40 knots</option>
+            <option value="9">9 - over 40 knots</option>
+          </select>
+
+<!--
+          <input size="6" type="TEXT" name="mv_plfm_spd" id="mv_plfm_spd" onblur="check_int_range_state(this.value,0,49,'mv_plfm_spd');">
+          <select tabindex="1" name="mv_plfm_spd_units" id="mv_plfm_spd_units">
+             <option value="knots">knots</option>
+             <option value="m/s">m/s</option>
+             <option value="km/hr">km/hr</option>
+             <option value="mi/hr">mi/hr</option>
+          </select>
+-->
+          <br>
+
+          I<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-7b" target="ICE_ACCR_CSE">Ice accretion cause:</a>
+          <select tabindex="1" name="ice_accr_cause_id" id="ice_accr_cause_id">
+            <option value=""></option>
+            <option value="1">1 - ocean spray</option>
+            <option value="2">2 - fog</option>
+            <option value="3">3 - spray and fog</option>
+            <option value="4">4 - rain</option>
+            <option value="5">5 - spray and rain</option>
+          </select>
+          <br>
+
+          E<sub>s</sub>E<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-7c" target="ICE_ACCR_THK">Ice accretion thickness:</a>
+          <input tabindex="1" size="5" type="TEXT" name="ice_accr_thkn" id="ice_accr_thkn" onblur="check_int_range_state(this.value,0,99,'ice_accr_thkn');">
+          cm
+          <br>
+
+          R<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-7d" target="ICE_ACCR_RATE">Ice accretion rate:</a>
+          <select tabindex="1" name="ice_accr_rate_id" id="ice_accr_rate_id">
+            <option value=""></option>
+            <option value="0">0 - not building</option>
+            <option value="1">1 - building slowly</option>
+            <option value="2">2 - building rapidly</option>
+            <option value="3">3 - ice melting or breaking slowly</option>
+            <option value="4">4 - ice melting or breaking rapidly</option>
+          </select>
+          <br>
+
+          c<sub>i</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9b" target="SEA_ICE_CONC">Sea ice concentration:</a>
+          <select tabindex="1" name="sea_ice_conc_id" id="sea_ice_conc_id">
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          S<sub>i</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9c" target="ICE_DEV_STG">Sea ice development stage:</a>
+          <select tabindex="1" name="ice_dev_stage_id" id="ice_dev_stage_id">
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          b<sub>i</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9d" target="ICE_TYPE_AMT">Sea ice of land origin:</a>
+          <select tabindex="1" name="ice_type_amt_id" id="ice_type_amt_id">
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select> 
+          <br>
+
+          D<sub>i</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9e" target="ICS_EDGE">Sea ice edge bearing:</a>
+          <select tabindex="1" name="ice_edge_brg_id" id="ice_edge_brg_id">
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          z<sub>i</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9f" target="ICE_SIT">Sea ice situation and trend:</a>
+          <select tabindex="1" name="ice_sit_id" id="ice_sit_id">
+            <option value=""></option>
+            <option value="/">/</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+          <br>
+
+          </td>
+        </tr>
+
+
+     </table>
+     </fieldset>
+     </td>
+     </tr>
+
+  
+     <tr>
+     <td>
+<!-- *********************************** Misc optional parameters *********************************** -->
+     <fieldset>
+     <legend><b>Misc. parameters</b></legend>
+     <table class="textsize">
+     <tr>
+     <td style="text-align:center;">
+
+     This section is optional.
+     <br>
+     <br>
+     </td>
+     </tr>
+
+     <tr>
+     <td style="text-align:left;">
+<!--
+        Standard isobaric surface:
+        <input size="7" type="TEXT" name="std_isob_sfc" id="std_isob_sfc" onblur="check_float_range_state(this.value,27,1100,'std_isob_sfc');">
+        <input type="radio" name="std_isob_sfc_units" id="std_isob_sfc_units" value="hPa" CHECKED>hPa
+        <input type="radio" name="std_isob_sfc_units" id="std_isob_sfc_units" value="in">in
+        <br>
+
+        Geopotential height:
+        <input size="7" type="TEXT" name="geop_std_isob_sfc" id="geop_std_isob_sfc" onblur="check_float_range_state(this.value,-10,800,'geop_std_isob_sfc');">
+        <input type="radio" name="geop_std_isob_sfc_units" id="geop_std_isob_sfc_units" value="m" CHECKED>m
+        <input type="radio" name="geop_std_isob_sfc_units" id="geop_std_isob_sfc_units" value="ft">ft
+        <br>
+-->
+
+        Elevation (anemometer):
+        <input tabindex="1" size="7" type="TEXT" name="stn_ht" id="stn_ht" value="0" onblur="check_int_range_state(this.value,-10,499,'stn_ht');">
+        m
+        <br>
+
+        Humidity:
+        <input tabindex="1" size="5" type="TEXT" name="rel_hum" id="rel_hum" onblur="check_int_range_state(this.value,0,100,'rel_hum');">
+        percent
+        <br>
+
+        s<sub>w</sub> - Wet bulb method:
+        <select tabindex="1" name="wet_bulb_temp_mthd" id="wet_bulb_temp_mthd">
+          <option value="0">0 - measured wet</option>
+          <option value="1">1 - measured ice</option>
+          <option value="2">2 - computed wet</option>
+          <option value="3">3 - computed ice</option>
+        </select>
+        <br>
+
+        s<sub>s</sub> - <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-2b" target="SEA_TEMP_MTHD">Sea temperature sign/type:</a>
+        <select tabindex="1" name="sea_temp_mthd" id="sea_temp_mthd">
+          <option value="0">0 - positive or zero - intake</option>
+          <option value="1">1 - negative - intake</option>
+          <option value="2">2 - positive or zero - bucket</option>
+          <option value="3">3 - negative - bucket</option>
+          <option value="4">4 - positive or zero - hull sensor</option>
+          <option value="5">5 - negative - hull sensor</option>
+          <option value="6">6 - positive or zero - other</option>
+          <option value="7">7 - negative - other</option>
+        </select>
+        <br>
+<!--
+        Instr wave per (sec):
+        <input size="5" type="TEXT" name="inst_wav_per" id="inst_wav_per" onblur="check_float_range_state(this.value,4,30,'inst_wav_per');">
+        <br>
+
+        Instr wave ht 1:
+        <input size="5" type="TEXT" name="inst_wav_ht_1" id="inst_wav_ht_1" onblur="check_float_range_state(this.value,0,20,'inst_wav_ht_1');">
+        <input type="radio" name="inst_wav_ht_1_units" id="inst_wav_ht_1_units" value="ft" CHECKED>ft
+        <input type="radio" name="inst_wav_ht_1_units" id="inst_wav_ht_1_units" value="m">m
+        <br>
+
+        Instr wave ht 2:
+        <input size="5" type="TEXT" name="inst_wav_ht_2" id="inst_wav_ht_2" onblur="check_float_range_state(this.value,0,20,'inst_wav_ht_2');">
+        <input type="radio" name="inst_wav_ht_2_units" id="inst_wav_ht_2_units" value="ft" CHECKED>ft
+        <input type="radio" name="inst_wav_ht_2_units" id="inst_wav_ht_2_units" value="m">m
+        <br>
+        </td>
+        </tr>
+-->
+
+        Icing remark:
+        <input tabindex="1" type="text" size="38" MAXLENGTH="80" name="icing_rmrk" id="icing_rmrk">
+        <br>
+        
+
+        <a HREF="../3144_1D_htm/sec-3/text/sec3ch4.htm#3-4-1-9g" target="ICE_RMRK">Ice remark:</a>
+        <input tabindex="1" type="text" size="38" MAXLENGTH="80" name="ice_rmrk" id="ice_rmrk">
+        </td>
+        </tr>
+
+     </table>
+     </fieldset>
+     </td>
+     </tr>

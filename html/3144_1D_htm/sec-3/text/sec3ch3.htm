@@ -1,0 +1,823 @@
+<!DOCTYPE HTML PUBLIC "-//SoftQuad//DTD HoTMetaL PRO 4.0::19971010::extensions to HTML 4.0//EN" "hmpro4.dtd">
+<HTML> 
+  <HEAD> 
+	 <TITLE> United States Navy Manual for Ship's Surface Weather Observations,
+		NAVMETOCCOMINST 3144.1D, March 1996.</TITLE> 
+  </HEAD> 
+  <BODY BGCOLOR="#FFFFFF"> 
+	 <P ALIGN="RIGHT"><IMG SRC="../../frmater/graphics/date.gif" ALT="date"
+		WIDTH="266" HEIGHT="40"></P> 
+	 <H1 ALIGN="CENTER"><A NAME="sec3ch3">SECTION III - CHAPTER 3</A></H1> 
+	 <P><A NAME="3-3">3.3</A> <B><U>CODING OF SECTION 1 DATA</U></B></P> 
+	 <P><A NAME="3-3-1">3.3.1</A> <U>Section 1&nbsp;
+		i<SUB>R</SUB>i<SUB>x</SUB>hVV &nbsp;&nbsp;Nddff (00fff)
+		&nbsp;&nbsp;1s<SUB>n</SUB>TTT&nbsp;&nbsp;2s<SUB>n</SUB>T<SUB>d</SUB>T<SUB>d</SUB>T<SUB>d</SUB>&nbsp;&nbsp;
+		4PPPP &nbsp;&nbsp;5appp &nbsp;&nbsp;7wwW<SUB>1</SUB>W<SUB>2</SUB>
+		&nbsp;&nbsp;8N<SUB>h</SUB>C<SUB>L</SUB>C<SUB>M</SUB>C<SUB>H</SUB>&nbsp;&nbsp;
+		9GGgg</U></P> 
+	 <P><A NAME="3-3-1-1">3.3.1.1</A> <U>i<SUB>R</SUB>i<SUB>x</SUB>hVV</U></P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-1a">a.</A><U> i<SUB>R</SUB></U> - This element is
+		<B><U>always</U></B> reported as 4. This indicates that no precipitation data
+		is included in the observation since ships do not measure precipitation
+		amounts.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-1b">b</A>. <U>i<SUB>x</SUB></U> - Enter the code figure indicating
+		the presence of weather phenomena data in the observation. <A
+		HREF="#tab3-3-1">See Table III-3-1</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-1c">c</A>. <U>h</U> - Enter the code figure indicating the height
+		of the base of the lowest layer of cloud observed. <A HREF="#tab3-3-2">See
+		Table III-3-2</A>. Note a layer of obscuring phenomena aloft is disregarded
+		when reporting the lowest layer of cloud present.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-1d">d</A>. <U>VV</U> - Enter the code figure indicating the
+		<B>lowest visibility value observed</B>. This includes all sector visibility
+		values. <A HREF="#tab3-3-3">See Table III-3-3</A>.</P> 
+	 <P><A NAME="3-3-1-2">3.3.1.2</A> <U>Nddff (00fff)</U>. Nddff identifies the
+		total sky covered by clouds, and the direction and speed of the true wind. The
+		two digits 00 is an indicator for the group 00fff, which is used only when wind
+		speeds are 99 knots or greater. </P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-2a">a</A>. <U>N</U> - Enter the code figure representing the octas
+		(eights) of the total sky covered by clouds. Conversion of tenths to octas can
+		be found in <A HREF="#tab3-3-4">Table III-3-4</A>.</P> 
+	 <P>Note 1 - A thin cloud layer is considered the same as an opaque cloud
+		layer.</P> 
+	 <P>Note 2 - A partial obscuration by surface-based obscuring phenomena and
+		all layers of obscuring phenomena aloft are not considered when figuring the
+		total sky cover.</P> 
+	 <P>Note 3 - A total obscuration by surface-based obscuring phenomena is not
+		disregarded but encoded as 9.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-2b">b</A>. <U>dd</U> - Enter hundreds and tens of the direction
+		from which the true wind is blowing. If the wind is calm, both dd and ff are
+		each encoded 00. </P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-2c">c</A>. <U>ff</U> Enter the knots (kts) of the true wind speed.
+		If the true wind speed is 99 knots, <B>ff</B> in <B>Nddff</B> is encoded 99 and
+		<B>fff</B> in <B>00fff</B> is encoded 099.</P> 
+	 <P><A NAME="3-3-1-21">3.3.1.2.1</A> <U>(00fff)</U>. As indicated in
+		paragraph <A HREF="#3-3-1-2">3.3.1.2</A>, if the wind speed is 99 knots or
+		more, <B>ff</B> in <B>Nddff</B> is encoded 99. If the wind speed is 100 knots
+		or more, <B>ff</B> is encoded 99 and <B>fff</B> is encoded with the actual wind
+		speed. For example, if the wind speed is 115 knots, the speed would be encoded
+		as <B>Ndd</B>99 00115.</P> 
+	 <P><A NAME="3-3-1-22">3.3.1.2.2</A> <U>Shaded Area.</U> This group is
+		encoded but not transmitted. It is used for determining the true wind direction
+		and speed based on the ship's course and speed at the time of observation and
+		the wind direction and speed relative to the ship's movement. Enter the height
+		of the anemometer in meters in the space provided. Enter the ship's course at
+		the time of observation in whole degrees true (i.e., 215, 010). This entry
+		should be the same entry as Column B of Part 1 of the CNMOC 3141/3. Enter the
+		ship's speed at the time of observation. This entry should be the same entry as
+		Column C of Part 1 of the CNMOC 3141/3. Enter the Apparent Wind direction
+		relative to the ship in whole degrees (i.e. 015, 275). Enter the Apparent Wind
+		speed in knots. If the apparent wind speed is 99 knots or more, enter the speed
+		in whole knots (i.e., 115).</P> 
+	 <P><A NAME="3-3-1-3">3.3.1.3</A> <U>1s<SUB>n</SUB>TTT.</U> This group
+		indicates the ambient air temperature in degrees Celsius.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-3a">a</A>. <U>1</U> - Identifies the air temperature group in
+		section 1 of the code. If the temperature cannot be observed, the entire group
+		is deleted from the observation and the 1 group will not appear in section
+		1.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-3b">b</A>. <U>s<SUB>n</SUB></U> - Enter the code figure indicating
+		if the temperature value is positive (including zero degrees) or negative (0 =
+		positive or zero; 1 = negative temperature).</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-3c">c</A>. <U>TTT</U> - Enter the ambient air temperature in tens,
+		units and tenths degrees Celsius.</P> 
+	 <P><A NAME="3-3-1-4">3.3.1.4</A>
+		<U>2s<SUB>n</SUB>T<SUB>d</SUB>T<SUB>d</SUB>T<SUB>d</SUB>.</U> This group
+		indicates the dew point temperature in degrees Celsius. Note that for air
+		temperatures below zero, the dew point in relation to liquid water, vice frozen
+		water, should be reported, i.e., dew point vice frost point.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-4a">a</A>. <U>2</U> - Identifies the dew point temperature group in
+		section 1 of the code.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-4b">b</A>. <U>s<SUB>n</SUB></U> - Enter the code figure indicating
+		if the temperature value is positive (including zero degrees) or negative (0 =
+		positive or zero; 1 = negative temperature).</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-4c">c</A>. <U>T<SUB>d</SUB>T<SUB>d</SUB>T<SUB>d</SUB></U> - Enter
+		the dew point temperature in tens, units, and tenths degrees Celsius.</P> 
+	 <P><A NAME="3-3-1-5">3.3.1.5</A> <U>4PPPP</U>. This group identifies the
+		sea level pressure in hectopascals (hPa), <B>the numerical equivalent of
+		millibars</B>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-5a">a</A>. <U>4</U> - Identifies the sea level pressure group in
+		section 1 of the code.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-5b">b</A>. <U>PPPP</U> - Enter the sea level pressure as computed,
+		in hundreds, tens, units and tenths of hectopascals.</P> 
+	 <P><A NAME="3-3-1-6">3.3.1.6</A> <U>5appp</U>. This group identifies the
+		pressure change for the past three hours, reported in hectopascals. <B>Note
+		this group is reported only when the ship is anchored or moored in the same
+		position for the full three hour period</B>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-6a">a</A>. <U>a</U> - Enter the code figure indicating the
+		characteristic of pressure tendency during the past three hours preceding the
+		time of observation. <A HREF="#tab3-3-5">See Table III-3-5</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-6b">b</A>. <U>ppp</U> - Enter the change in pressure during the
+		three hours preceding the time of observation in tens, units and tenths of a
+		hectopascal.</P> 
+	 <P><A NAME="3-3-1-7">3.3.1.7</A> <U>7wwW<SUB>1</SUB>W<SUB>2</SUB></U>. This
+		group identifies the weather conditions at the time of observation and the
+		preceding hours since the last synoptic observation.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-7a">a</A>. <U>7</U> - Identifies the present and past weather group
+		in section 1 of the code. If no significant weather is reported for present
+		weather (ww code figures 00, 01, 02, and 03 are considered not significant) and
+		no significant weather is reported for past weather (W<SUB>1</SUB>
+		W<SUB>2</SUB> code figures 0, 1 and 2 are considered not significant) this
+		group will be encoded as 70000. If not observed or not determined, encode as
+		7////. Only in this case will i<SUB>x</SUB> be encoded as "3".</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-7b">b</A>. <U>ww</U> - Enter the code figure indicating the present
+		weather, or weather occurrences for the past hour. The highest numerical code
+		shall be used except that code figure 17 thunderstorm without precipitation at
+		the station shall be reported over code figures 20 through 49.
+		<A HREF="#tab3-3-6">See Table III-3-6</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-7c">c</A>. <U>W<SUB>1</SUB>W<SUB>2</SUB></U> - Enter the code
+		figures indicating the types of weather that occurred in the period of time
+		indicated as follows. <A HREF="#tab3-3-7">See Table III-3-7</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(1)
+		At the <B>0000, 0600, 1200, 1800</B> UTC observation, report the past weather
+		for the last five hours preceding the last hour, (i.e., 1200Z to 1700Z for
+		W1W2, and 1700Z to 1800Z for ww.)</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2)
+		At the <B>0300, 0900, 1500, 2100</B> UTC observation, report the past weather
+		for the last two hours preceding the last hour, (i.e., 0600Z to 0800Z for W1W2,
+		and 0800Z to 0900Z for ww.) The code figures for W<SUB>1</SUB> and
+		W<SUB>2</SUB> shall be selected in such a way that W1W2 and ww together give as
+		complete a description as possible of the weather in the time interval
+		concerned, i.e., if the type of weather undergoes a complete change during the
+		time interval concerned, the code figures selected for W<SUB>1</SUB> and
+		W<SUB>2</SUB> shall describe the weather pre-vailing before the type of weather
+		indicated by ww began. When two or more types of weather occurred in the time
+		period, the highest figure shall be reported for W<SUB>1</SUB>, and the second
+		highest code figure shall be reported for W<SUB>2</SUB>. When the entire period
+		covered has been under the influence of only one type of weather, the
+		corresponding code figure shall be used for both W<SUB>1</SUB> and
+		W<SUB>2</SUB>, i.e., rain during the entire period shall be reported by means
+		of W<SUB>1</SUB> W<SUB>2</SUB> = 66.</P> 
+	 <P><A NAME="3-3-1-8">3.3.1.8</A>
+		<U>8N<SUB>h</SUB>C<SUB>L</SUB>C<SUB>M</SUB>C<SUB>H</SUB></U>. This group
+		identifies the predominant cloud forms present at the time of observation.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-8a">a</A>. <U>8</U> - Identifies the cloud group in section 1 of
+		the code. If no low, middle and high clouds are present, enter zeros, i.e.,
+		80000. If the sky is totally obscured, the group will be encoded as soliduses
+		(8////).</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-8b">b</A>. <U>N<SUB>h</SUB></U> - Enter the code figure indicating
+		the amount of all low clouds present C<SUB>L</SUB>, or if no low cloud is
+		present, enter the amount of all middle clouds present C<SUB>M</SUB>, at the
+		time of observation <A HREF="#tab3-3-4">(see Table III-3-4)</A>. If the sky is
+		totally obscured, encode N<SUB>h</SUB> as either 9 or /.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-8c">c</A>. <U>C<SUB>L</SUB></U> - Enter the code figure
+		representing the predominant type of low cloud present C<SUB>L</SUB>. If no low
+		cloud is present, but a middle C<SUB>M</SUB> or high cloud C<SUB>H</SUB> is
+		present, enter 0 for C<SUB>L</SUB> <A HREF="#tab3-3-8">(see Table
+		III-3-8)</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-8d">d</A>. <U>C<SUB>M</SUB></U> - Enter the code figure
+		representing the predominant type of middle cloud C<SUB>M</SUB> present. If no
+		middle cloud is present but a low C<SUB>L</SUB> or high cloud C<SUB>H</SUB> is
+		present, enter 0 for C<SUB>M</SUB>. If the total of all low clouds present
+		equals 10/10, 8/8 (overcast) enter " / " for CM <A HREF="#tab3-3-9">(see Table
+		III-3-9)</A>.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-8e">e</A>. <U>C<SUB>H</SUB></U> - Enter the code figure
+		representing the predominant type of high cloud C<SUB>H</SUB> present. If no
+		high cloud is present but a low C<SUB>L</SUB> or middle cloud C<SUB>M</SUB> is
+		present, enter 0 for C<SUB>H</SUB>. If the total of all low C<SUB>L</SUB> and
+		middle clouds C<SUB>M</SUB> present equals 10/10, 8/8 (overcast) enter " / "
+		for C<SUB>H</SUB> <A HREF="#ta3-3-10">(see Table III-3-10)</A>.</P> 
+	 <P><A NAME="3-3-1-9">3.3.1.9</A> <U>9GGgg</U>. This group identifies if the
+		actual time of the observation is not within 10 minutes of the standard
+		reporting time. Since most observation reports are made within ten minutes of
+		the standard time, this group will usually not be included.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-9a">a</A>. <U>9</U> - Indicator.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-9b">b</A>. <U>GG</U> - Time in whole hours UTC.</P> 
+	 <P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A
+		NAME="3-3-1-9c">c</A>. <U>gg</U> - Time in whole minutes UTC.</P> 
+	 <P></P><HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-1"><FONT>TABLE
+		III-3-1</FONT></A></B><BR></P> 
+	 <CENTER><IMG SRC="../graphics/tab3-3-1.gif" BORDER="0" WIDTH="511"
+		HEIGHT="112"></CENTER><HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-2"><FONT>TABLE
+		III-3-2</FONT></A></B><BR></P> 
+	 <PRE><B>h - Height above the ground of the base of the lowest cloud layer
+
+<U>Code figure </U>  <U> Feet</U>                          <U>Meters</U></B>
+  0          00 to   99                    00 to    49
+  1         100 to  299                    50 to    99
+  2         300 to  699                   100 to   199
+  3         700 to  999                   200 to   299
+  4        1000 to 1999                   300 to   599
+  5        2000 to 3299                   600 to   999
+  6        3300 to 4899                  1000 to  1499
+  7        4900 to 6499                  1500 to  1999
+  8        6500 to 7999                  2000 to  2499
+  9        8000 or above, no clouds      2500 or above, no clouds
+  /        Height not known              Height not known
+
+
+ </PRE><HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-3"><FONT>TABLE
+		III-3-3</FONT></A></B><BR></P> 
+	 <CENTER><IMG SRC="../graphics/tab3-3-3.gif" WIDTH="518"
+		HEIGHT="176" BORDER="0"></CENTER> 
+	 <P></P><HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-4"><FONT>TABLE
+		III-3-4</FONT></A></B><BR></P>
+	 <PRE>N  -  Total cloud cover
+Nh -  Amount of all low clouds present, or if no low cloud is
+      present, the amount of all mid clouds present
+
+<B> Code                                     Oktas
+ <U>figure       Tenths                    (eighths)</U></B>
+   0            0                           0 (SKC)
+   1  1/10 or less, but not 0       1 okta or less, but not 0 
+   2      2/10 and 3/10                  2 oktas (FEW)
+   3           4/10                      3 oktas 
+   4           5/10                      4 oktas (SCT)
+   5           6/10                      5 oktas 
+   6      7/10 and 8/10                  6 oktas (BKN)
+   7  9/10 or more, but not 10/10  7 oktas or more, but not 8 
+   8          10/10                      8 oktas (OVC)
+   9   Sky obscured by fog and/or other meteorological phenomena
+   /   Cloud cover is indiscernible for reasons other than fog or
+       other meteorological phenomena, or observation is not made.
+
+</PRE> <HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-5">TABLE III-3-5</A></B><BR></P>
+	 <PRE>a --  Characteristic of pressure tendency during the three
+      hours preceding the time of observation
+
+<U><B>Code figure   Pressure higher now than three hours ago</B></U>
+     0        Increasing, then decreasing; atmospheric pressure
+              the same or higher than three hours ago.
+     1        Increasing, then steady; or increasing then
+              increasing more slowly.
+     2        Increasing, steadily or unsteadily.
+     3        Decreasing or steady, then increasing; or
+              increasing, then increasing more rapidly.
+     4        Steady; pressure the same as three hours ago
+     5        Decreasing, then increasing; pressure the same or
+              lower than three hours ago.
+              <B><U>Pressure lower now than three hours ago</U></B>
+     6        Decreasing, then steady; or decreasing, then
+              decreasing more slowly.
+     7        Decreasing, steadily or unsteadily
+     8        Steady or increasing, then decreasing; or
+              decreasing, then decreasing more rapidly.
+</PRE> <HR> 
+	 <CENTER> 
+		<TABLE WIDTH="90%" BORDER="1"> 
+		  <TR> 
+			 <TD ALIGN="CENTER"><B><A NAME="tab3-3-6">TABLE III-3-6</A></B></TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>ww -- Present Weather Code Specification In Order of
+				Priority</B></TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>Encode the first weather condition or restriction to
+				visibility that applies. If more than one applies, the first described weather
+				or restriction to visibility is the one to be reported.</B></TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 99-50. Use code figures 99-50 for precipitation at the
+				station at the time of observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 99-80. Use code figures 99-80 for showery precipitation or
+				precipitation with current or recent thunderstorms.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 99-95. In order to have a thunderstorm at the time of your
+				observation, thunder must have been heard or lightning must have been seen
+				within 15 minutes of the observation time. In a U.S. observation there are only
+				two intensities of thunderstorms: thunderstorm and severe thunderstorm. A
+				thunderstorm is less than severe if within the past 15 minutes all wind gusts
+				were less than 50 kt and all hail was less than 3/4 in (19 mm) in diameter. A
+				thunderstorm is a severe thunderstorm if within the past 15 minutes there were
+				any wind gusts of 50 kt or more or any hail 3/4 in (19 mm) or greater in
+				diameter.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>99 - Thunderstorm, severe, with hail, small hail, or snow
+				pellets at time of observation.</B><BR> If there is a severe thunderstorm with
+				hail, ice pellets, or snow pellets, use code figure 99. There may or may not
+				also be rain or snow or a mixture of rain and snow of any intensity (i.e.,
+				+TSGR, +TSPE).<BR> <BR> <B>98 - Thunderstorm at time of observation combined
+				with duststorm or sandstorm at time of observation (unlikely at sea)</B>.<BR>
+				If there is a thunderstorm and a duststorm or sandstorm at the time of
+				observation, use code figure 98. There must also be some sort of precipitation
+				at the time of observation, but it may not be seen because of poor visibility.
+				Judgment must be used. (e.g., TSSA, +TSSA) <BR> <BR> <B>97 - Thunderstorm,
+				severe without hail, small hail, or snow pellets but with rain and/or snow at
+				time of observation.</B><BR> If there is a severe thunderstorm at the time of
+				observation, with rain, snow, or a mixture of rain and snow, but with no hail,
+				ice pellets, or snow pellets, use code figure 97. The rain or snow may be of
+				any intensity (i.e., +TSSN, +TSRA).<BR> <BR> <B>96 - Thunderstorm with hail,
+				small hail, or snow pellets at time of observation</B>.<BR> If there is a
+				thunderstorm at the time of observation, and there is also hail, ice pellets,
+				or snow pellets, use code figure 96. There may or may not be rain or snow or a
+				mixture of rain and snow of any intensity (i.e., TSGR, -TSPE).<BR> <BR> <B>95 -
+				Thunderstorm without hail, small hail or snow pellets, but with rain and/or
+				snow at time of observation</B>.<BR> If there is a thunderstorm at the time of
+				observation with rain or snow or a mixture of rain and snow but with no hail,
+				ice pellets, or snow pellets, use code figure 95. The rain or snow may be of
+				any intensity (i.e., -TSRA).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 94-91. Use code figures 94-91 if there was a thunderstorm
+				during the past hour, and there is some sort of precipitation at the time of
+				observation. In order to have this situation, the last lightning or thunder
+				observed must have been more than 15 minutes before the observation, but less
+				than 1 hour 15 minutes before the observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>94 - Moderate or heavy snow or rain and snow mixed or hail,
+				small hail or snow pellets at time of observation. Thunderstorm during previous
+				hour but not at time of observation</B>.<BR> If there is moderate or heavy snow
+				or moderate or heavy snow showers, or if there is a mixture of rain and snow or
+				mixed rain showers and snow showers, and the intensity of either is moderate or
+				heavy, or if there are moderate or heavy ice pellets or snow pellets, or if
+				there is hail at the time of observation, use code figure 94 (i.e., GR,
+				SHSN).<BR> <BR> <B>93 - Slight snow or rain and snow mixed or hail, small hail,
+				or snow pellets at time of observation. Thunderstorm during previous hour but
+				not at time of observation</B>.<BR> If there is light snow or light snow
+				showers, or if there is a mixture of rain and snow or mixed rain showers and
+				snow showers and the intensity of both is light, or if there are light ice
+				pellets or light snow pellets at the time of observations, use code figure 93
+				(i.e., -SHRAGR, -SHSN).<BR> <BR> <B>92 - Moderate or heavy rain at time of
+				observation. Thunderstorm during previous hour but not at time of
+				observation</B>.<BR> If there is moderate or heavy rain, or a moderate or heavy
+				rain shower at the time of observation (and no other forms of precipitation),
+				use code figure 92 (i.e., SHRA, +RA).<BR> <BR> <B>91 - Light rain at time of
+				observation. Thunderstorm during previous hour but not at time of
+				observation</B>.<BR> If there is light rain or a light rain shower at the time
+				of observation (and no other precipitation), use code figure 91 (i.e., SHRA,
+				-RA). </TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 90-80. Use code figures 90-80 to report showery
+				precipitation that is not associated with a thunderstorm. Showers fall from
+				cumuliform clouds that are, by nature, isolated. Because of this, individual
+				showers do not last very long. Between showers openings, other clouds may be
+				seen. Code figure 89 is not reported in the United States.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>90 - Moderate or heavy shower(s) of hail, with or without rain
+				or rain and snow mixed, not associated with thunder.</B><BR> If there are
+				showers of hail at the station at the time of observation, and the hail is not
+				associated with a thunderstorm, use code figure 90. The hail may or may not be
+				mixed with rain or both rain and snow (i.e., GR, +SHRAGR).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 88-87. Use code figure 88 or 87 if showers of snow pellets
+				or ice pellets are observed at the station at the time of the observation. The
+				snow pellets or ice pellets may or may not be mixed with rain or both rain and
+				snow.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>88 - Moderate or heavy shower(s) of snow pellets or small
+				hail, with or without rain or rain and snow mixed</B>.<BR> If the only
+				precipitation is snow pellets or ice pellets, and the intensity is moderate or
+				heavy, then use code figure 88. If there is also rain, or mixed rain and snow,
+				and any of the precipitation is moderate or heavy, use code figure 88 (i.e.,
+				-SHRA, +SHPE).<BR> <BR> <B>87 - Light shower(s) or snow pellets or small hail,
+				with or without rain or rain and snow mixed</B>.<BR> If the only precipitation
+				is snow pellets or ice pellets, and the intensity is light, then use code
+				figure 87. If there is also rain, or mixed rain and snow, and all of the
+				precipitation is light, use code figure 87 (-SHSN-SHPE).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 86-85. Use code figure 86 or 85 if only snow showers are
+				observed at the station at the time of observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>86 - Snow shower(s), moderate or heavy</B>.<BR> Encode as SHSN
+				or +SHSN.<BR> <BR> <B>85 - Snow shower(s), light.</B><BR> Encode as -SHSN.</TD>
+			 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 84-83. Use code figure 84 or 83 if mixed rain showers and
+				snow showers are observed at the station at the time of observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>84 - Moderate or heavy shower(s) of rain and snow mixed.
+				Intensity of either may be moderate or heavy</B>.<BR> Encode as SHRA+SHSN,
+				etc.<BR> <BR> <B>83 - Light shower(s) of rain and snow mixed. Intensity of both
+				must be light</B>.<BR> Encode as -SHRA-SHSN.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 82-80. Use code figures 82-80 to report rain showers at the
+				time of observation. The code figure used depends upon the intensity of the
+				shower at time of observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>82 - Violent rain shower(s)</B>.<BR> If a violent rain shower
+				is observed at the station at the time of observation, use code figure 82.
+				Report a rain shower as violent if the rate of fall is at least 1 in (25 mm)
+				per hour or 0.10 in (3 mm) in 6 minutes (i.e., +SHRA).<BR> <BR> <B>81 -
+				Moderate or heavy rain shower(s)</B>.<BR> Encode as SHRA.<BR> <BR> <B>80 -
+				Light rain shower(s)</B>.<BR> Encode as -SHRA.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 79-50. Use code figures 79-50 for precipitation that is not
+				showery.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 79-70. Use code figures 79-70 to report solid precipitation
+				not in showers.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 79-76. Use code figures 79-76 to report types of solid,
+				non-showery precipitation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>79 - Ice pellets</B>.<BR> If ice pellets observed are not in
+				the form of showers, at the time of observation, use code figure 79. Use this
+				code figure regardless of the intensity of the ice pellets and regardless of
+				whether the ice pellets are mixed with another type of precipitation (i.e.,
+				-PE, PE, +PE).<BR> <BR> <B>78 - Isolated star-like snow crystals with or
+				without fog or ice fog</B>.<BR> <BR> <B>77 - Snow grains with or without fog or
+				ice fog</B>.<BR> If snow grains are observed at the station at the time of
+				observation, use code figure 77. Use this code figure regardless of intensity
+				of the snow grains. Snow grains may or may not be accompanied by fog or ice fog
+				(i.e., -SG, SG, +SG).<BR> <BR> <B>76 - Diamond dust (ice crystals) with or
+				without fog or ice fog</B>.<BR> If ice crystals are observed at the station at
+				the time of the observation, use code figure 76. Ice crystals may or may not be
+				accompanied by fog or ice fog (i.e., IC).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 75-70. Use code figures 75-70 to report snow that is not in
+				the form of showers at the station at the time of the observation. The code
+				figure selected depends on a combination of intensity and whether the snow is
+				intermittent or continuous.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>75 - Continuous fall of snowflakes, heavy at time of
+				observation</B>.<BR> Encode as +SN.<BR> <BR> <B>74 - Intermittent fall of
+				snowflakes, heavy at time of observation.</B><BR> Encode as +SN.<BR> <BR> <B>73
+				- Continuous fall of snowflakes, moderate at time of observation</B>.<BR>
+				Encode as SN.<BR> <BR> <B>72 - Intermittent fall of snowflakes, moderate at
+				time of observation</B>.<BR> Encode as SN.<BR> <BR> <B>71 - Continuous fall of
+				snowflakes, light at time of observation</B>.<BR> Encode as -SN.<BR> <BR> <B>70
+				- Intermittent fall of snowflakes, light at time of observation</B>.<BR> Encode
+				as -SN.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 69-60. Code figures 69-60 are generally used to report
+				rain.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 69-66. Use code figures 69-66 to report liquid precipitation
+				that is mixed with snow or is freezing.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>69 - Rain or drizzle and snow, moderate or heavy</B>.<BR>
+				Encode as RA-SN, +RASN, etc.<BR> <BR> <B>68 - Rain or drizzle and snow,
+				light</B>.<BR> Encode as -DZ-SN, -RA-SN.<BR> <BR> <B>67 - Rain, freezing,
+				moderate or heavy</B>.<BR> If the intensity of the freezing rain (or mixed
+				freezing rain and freezing drizzle) is moderate, or heavy use code figure 67
+				(i.e., FZRA, +FZRA).<BR> <BR> <B>66 - Rain, freezing, light</B>.<BR> If the
+				intensity of the freezing rain (or mixed freezing rain and freezing drizzle) is
+				light, use code figure 66 (i.e., -FZRA).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 65-60. Use code figure 65-60 to report rain (but not
+				freezing rain or rain mixed with snow) at the station at the time of
+				observation. The code figure used depends on the combination of intensity and
+				whether the precipitation is intermittent or continuous.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>65 - Rain, not freezing, continuous, heavy at time of
+				observation.</B><BR> Encode as +RA.<BR> <BR> <B>64 - Rain, not freezing,
+				intermittent, heavy at time of observation</B>. <BR> Encode as +RA.<BR> <BR>
+				<B>63 - Rain, not freezing, continuous, moderate at time of
+				observation</B>.<BR> Encode as RA.<BR> <BR> <B>62 - Rain, not freezing,
+				intermittent, moderate at time of observation</B>.<BR> Encode as RA.<BR> <BR>
+				<B>61 - Rain, not freezing, continuous, light at time of observation.</B><BR>
+				Encode as -RA.<BR> <BR> <B>60 - Rain, not freezing, intermittent, light at time
+				of observation</B>.<BR> Encode as -RA.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 59-50. Use 59-50 to report drizzle.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 59-56. Drizzle mixed with rain, or freezing drizzle.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>59 - Drizzle and rain, moderate or heavy</B>.<BR> Encode as
+				RADZ, +DZRA, etc.<BR> <BR> <B>58 - Drizzle and rain, light</B>.<BR> Encode as
+				-RA-DZ.<BR> <BR> <B>57 - Drizzle, freezing, moderate or heavy.</B><BR> Encode
+				as FZDZ or +FZDZ.<BR> <BR> <B>56 - Drizzle, freezing, light</B>.<BR> Encode as
+				-FZDZ.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 55-50. Use code figures 55-50 to report drizzle (but not
+				freezing drizzle or drizzle mixed with rain) at the station at the time of
+				observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>55 - Drizzle, not freezing, continuous, heavy at time of
+				observation</B>.<BR> Encode as +DZ.<BR> <BR> <B>54 - Drizzle, not freezing,
+				intermittent, heavy at time of observation</B>.<BR> Encode as +DZ.<BR> <BR>
+				<B>53 - Drizzle not freezing, continuous, moderate at time of
+				observation</B>.<BR> Encode as DZ.<BR> <BR> <B>52 - Drizzle not freezing,
+				intermittent, moderate at time of observation</B>.<BR> Encode as DZ.<BR> <BR>
+				<B>51 - Drizzle not freezing, continuous, light at time of observation</B>.<BR>
+				Encode as -DZ.<BR> <BR> <B>50 - Drizzle not freezing, intermittent, light at
+				time of observation</B>.<BR> Encode as -DZ.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 17. Thunderstorm, but no precipitation at time of
+				observation. Code figure 17 has priority over code figures 49-20 and
+				16-00.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>17 - Thunderstorm, but no precipitation at time of observation
+				(17TS)</B>.<BR> A thunderstorm is an electrical storm that may or may not be
+				accompanied by precipitation. If there is a thunderstorm at the station, but no
+				precipitation, use code figure 17. Since by U.S. definition, a thunderstorm
+				does not end until 15 minutes after the last lightning or thunder, code figure
+				17 would be used if the thunderstorm occurred within 15 minutes of the
+				observation (i.e., TS or +TS).<BR> <BR> </TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 49-00. Use code figure 49-00 when no precipitation is
+				occurring at the station at the time of observation.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 49-40. Use code figures 49-40 only if there is fog. The fog
+				may be made of water droplets or ice crystals (ice fog). The visibility in fog
+				or ice fog must be less than 5/8 mi (1 km). If the visibility is 5/8 mi (1 km)
+				or more, use code figure 10. The code figure used will depend on whether the
+				fog has changed during the past hour and whether the sky can be seen (blue sky,
+				stars or higher clouds).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>49 - Fog depositing rime, sky invisible</B>.<BR> Fog that
+				deposits rime will be made up mostly of supercooled water droplets, not ice
+				crystals (FZFG). Sky is obscured.<BR> <BR> <B>48 - Fog depositing rime, sky
+				visible</B>.<BR> Sky is visible. Encode as FZFG.<BR> <BR> <B>47 - Fog or ice
+				fog, sky invisible. Fog has begun or has become thicker during the preceding
+				hour</B>.<BR> Encode as FG.<BR> <BR> <B>46 - Fog or ice fog, sky visible. Fog
+				has begun or has become thicker during the preceding hour</B>.<BR> Encode as
+				FG<BR> <BR> <B>45 - Fog or ice fog, sky invisible. Fog has shown no appreciable
+				change during the preceding hour</B>.<BR> Encode as FG<BR> <BR> <B>44 - Fog or
+				ice fog, sky visible. Fog has shown no appreciable change during the preceding
+				hour</B>.<BR> Encode as FG<BR> <BR> <B>43 - Fog or ice fog, sky invisible. Fog
+				has become thinner during the preceding hour</B>.<BR> Encode as FG<BR> <BR>
+				<B>42 - Fog or ice fog, sky visible. Fog has become thinner during the
+				preceding hour</B>.<BR> Encode as FG<BR> <BR> <B>41 - Fog or ice fog in
+				patches. Fog has begun or has become thicker during the preceding hour</B>.<BR>
+				Encode as FG<BR> <BR> <B>40 - Fog or ice fog at a distance at the time of
+				observation, but not at the station during the preceding hour, the fog or ice
+				fog extending to a level above that of the observer</B>.<BR> Encode as PRFG or
+				BCFG</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 39-30. Use code figures 39-30 to report a duststorm,
+				sandstorm, or drifting or blowing snow. These phenomena are rarely observed
+				from ships except close to deserts or ice fields.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 39-36. In deciding among code figures 39-36, the following
+				must be considered: snow that is being moved by the wind may be generally low
+				(below about 6 ft (2 m)) or generally high (above 6 ft (2 m)). If the snow is
+				low, it is drifting snow; if high, it is blowing snow. Code 37 is not used in
+				the United States.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>39 - Heavy blowing snow, generally high (above eye level).
+				Visibility less than 5/16 mi (1/2 km)</B>.<BR> Encode as +BLSN.<BR> <BR> <B>38
+				- Slight or moderate blowing snow, generally high (above eye level). Visibility
+				6 mi (10 km) or less but not less than 5/16 mi (1/2 km)</B>.<BR> Encode as
+				-BLSN or BLSN.<BR> <BR> <B>37 - Heavy drifting snow, generally high (above eye
+				level).</B><BR> Encode as +DRSN.<BR> <BR> <B>36 - Light to moderate drifting
+				snow, generally low (below eye level)</B>.<BR> Encode as -DRSN or DRSN. <BR>
+				<BR> </TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 35-30. In deciding among code figures 35-30 the following
+				must be considered: if the visibility at the station at the time of observation
+				is less than 5/16 mi (1/2 km), there is a severe duststorm or sandstorm; if the
+				visibility is at least 5/16 mi (1/2 km) but less than 5/8 mi (1 km), there is a
+				slight or moderate duststorm or sandstorm. The code figure used depends on the
+				intensity of the sandstorm or duststorm and any change in its intensity during
+				the preceding hour.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>35 - Severe duststorm or sandstorm that has begnn or has
+				increased during the preceding hour</B>.<BR> Encode as +SS or +DS.<BR> <BR>
+				<B>34 - Severe duststorm or sandstorm that has had no appreciable change during
+				the preceding hour</B>.<BR> Encode as +SS or +DS.<BR> <BR> <B>33 - Severe
+				duststorm or sandstorm that has decreased during the preceding hour.</B><BR>
+				Encode as +SS or +DS.<BR> <BR> <B>32 - Slight or moderate duststorm or
+				sandstorm that has begun or has increased during the preceding hour</B>.<BR>
+				Encode as SS or -DS.<BR> <BR> <B>31 - Slight or moderate duststorm or sandstorm
+				that has had no appreciable change during the preceding hour</B>.<BR> Encode as
+				-SS or DS.<BR> <BR> <B>30 - Slight or moderate duststorm or sandstorm that has
+				decreased during the preceding hour (30SA)</B>.<BR> Encode as SS or -DS.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 29-20. Use code figures 29-20 to report precipitation, fog,
+				ice fog, or thunderstorm at the station during the preceding hour but not at
+				the station at the time of observation. Code figures 29-20 are used only if
+				there was precipitation, fog, ice fog (but not mist), or a thunderstorm at the
+				station during the past hour, but not at the time of observation. Use code
+				figures 29-25 if the precipitation was showery; otherwise use code figures
+				24-20.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>29 - Thunderstorm (with or without precipitation)</B>.<BR>
+				Since by U.S. definition a thunderstorm ends 15 minutes after the last thunder
+				or lightning, the last thunder or lightning must have happened at least 15
+				minutes before the time of the observation.<BR> Encode as TS.<BR> <BR> <B>28 -
+				Fog or ice fog</B>.<BR> The visibility in the fog or ice fog must have been
+				less than 5/8 mi (1 km).<BR> Encode as FG or FZFG.<BR> <BR> <B>27 - Shower(s)
+				of hail, small hail, or ice pellets, or of rain and hail, small hail or ice
+				pellets</B>.<BR> Encode as SHGR or SHRAGR.<BR> <BR> <B>26 - Shower(s) of snow,
+				or of rain and snow</B>.<BR> Encode as SHSN or SHRASN.<BR> <BR> <B>25 -
+				Shower(s) of rain</B>.<BR> Encode as SHRA.<BR> <BR> <B>24 - Freezing drizzle or
+				freezing rain, not falling as shower(s)</B>.<BR> Encode as FZRA.<BR> <BR> <B>23
+				- Rain and snow or ice pellets, not falling as shower(s)</B>.<BR> Encode as PA
+				or SN or PE<BR> <BR> <B>22 - Snow not falling as shower(s).</B><BR> Encode as
+				SN<BR> <BR> <B>21 - Rain (not freezing), not falling as shower(s)</B><BR>
+				Encode as RA<BR> <BR> <B>20 - Drizzle (not freezing) or snow grains, not
+				falling as shower(s)</B>.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 19-00. Use code figures 19-00 to report certain
+				hydrometeors, electrometeors, lithometeors or no precipitation at the station
+				at the time of observation or during the preceding hour.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>19 - Funnel cloud(s), tornado, or waterspout at or within
+				sight of the station during the preceding hour of the time of the
+				observation</B>.<BR> Since the highest code figure is reported (except code
+				figure 17), code figure 19 cannot be used if ww can be encoded as some higher
+				number. If a tornado is observed at or near the station at the time of the
+				observation or during the preceding hour, include the plain language word
+				TORNADO as the last group in Section 3. This instruction shall be followed
+				regardless of the code figure selected for ww. Do not include a plain language
+				word for funnel cloud or waterspout if code figure 19 is used.<BR> <BR> <B>18 -
+				Squalls. By U.S. definition, a sudden increase of at least 15 knots in average
+				wind speed and sustained at 20 knots or more for at least 1 minute. This must
+				occur at or within sight of the station during the preceding hour or at the
+				time of observation</B>.<BR> If a squall without any precipitation is observed,
+				either at the time of observation or during the past hour, use code figure 18.
+				If there was any precipitation, or if there was a thunderstorm with the squall,
+				use one of the other code figures, possibly code figure 29 or one of the code
+				figures 99-80. Select the one that best describes what happened.<BR> Encode as
+				SQ.<BR> <BR> <B>16 - Precipitation within sight, reaching the ground or the
+				surface of the sea near to, but not at the station</B>.<BR> The precipitation
+				must be less than 3 mi (5 km) from the station, but not at the station to use
+				code figure 16.<BR> Encode as VCSH<BR> <BR> <B>15 - Precipitation within sight,
+				reaching the ground or the surface of the sea, but distant; i.e., estimated to
+				be more than 3 mi (5 km), from the station</B>.<BR> Encode as VCSH<BR> <BR>
+				<B>14 - Precipitation within sight, not reaching the ground or the surface of
+				the sea</B>.<BR> Sometimes precipitation may fall from a cloud, but into air
+				that is dry enough to evaporate it before it can reach the ground. This is
+				fairly common in desert areas, like some parts of the southwestern United
+				States. This phenomena is called virga.<BR> <BR> <B>13 - Lightning visible, no
+				thunder heard</B>.<BR> There are two reasons you may see lightning but not hear
+				thunder. The first is that the lightning may be far enough away that the
+				thunder doesn't reach the station. The other is that local sounds may muffle
+				the thunder. Use code figure 13 to report distant lightning.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 12-10. Use code figure 12 or 11 to report shallow fog.
+				Continuous refers to covering more than half of the ground or sea; patchy
+				refers to less than one-half coverage. The apparent visibility shall be less
+				than 5/8 mi (1 km). Code figure 10 is used to report fog that is neither
+				shallow nor has visibility less than 5/8 mi (1 km). (Code figures 49-40 are
+				used to report fog that is not shallow but with visibility less than 5/8 mi (1
+				km).</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>12 - More or less continuous shallow fog or ice fog at the
+				station, whether on land or sea; the fog or ice fog is not deeper than about 6
+				ft (2 km) on land or 30 ft (10 m) at sea</B>.<BR> Encode as MIFG.<BR> <BR>
+				<B>11 - Patches of shallow fog or ice fog at the station, whether on land or
+				sea; the fog or ice fog not deeper than about 6 ft (2 km) on land or 30 ft (10
+				m) at sea</B>.<BR> Encode as MIFG.<BR> <BR> <B>10 - Mist (10BR)</B>.<BR> Code
+				figure 10 refers only to water droplets and ice crystals. The visibility
+				restriction shall be 5/8 mi (1 km) or more but less than 6 mi (10 km). Use code
+				figure 10 whether the mist is patchy or more or less continuous. <BR> Encode as
+				BR.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 09-04. Use code figure 09-04 to report lithometeors.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>09 - Duststorm or sandstorm within sight at the time of
+				observation, or at the station during the preceding hour</B>.<BR> Visibility in
+				dust or sand must be (or have been) 6 mi (10 km) or less.<BR> Encode as DS or
+				SS.<BR> <BR> <B>08 - Well-developed dust whirl(s) (devils) or sand whirl(s)
+				seen at or near the station during the preceding hour or at the time of
+				observation, but no duststorm or sandstorm</B>.<BR> Encode as PO.<BR> <BR>
+				<B>07 - Dust or sand raised by wind at or near the station at the time of
+				observation, but no well-developed dust whirl(s) (devils) or sand whirl(s), and
+				no duststorm or sandstorm seen; or in the case of ships, blowing spray at the
+				station</B>.<BR> Use code figure 07 if there is dust in the air, the wind is
+				strong enough to be lifting more dust or sand at the time of observation and
+				the visibility at the time of observation is 6 mi (10 km) or less. Do not use
+				code figure 07 if there is a well-developed dust whirl (devils) or a duststorm
+				or a sandstorm.<BR> Encode as BLSA or BLDU.<BR> <BR> <B>06 - Widespread dust is
+				suspended in the air, not raised by wind at or near the station at the time of
+				observation</B>.<BR> Use code figure 06 if there is dust in the air, but the
+				wind at the time of observation is not strong enough to be lifting more dust
+				into the air. This code figure may be used with any visi-bility, as long as
+				there is dust in the air. <BR> Encode as HZ.<BR> <BR> <B>05 - Haze</B>.<BR>
+				Code figure 05 is not restricted to the definition applied for reports of haze
+				in the basic observation, but can be used if it is simply hazy, regardless of
+				the visibility.<BR> Encode as HZ.<BR> <BR> <B>04 - Visibility reduced by smoke;
+				e.g., veldt or forest fires, industrial smoke or volcanic ash</B>.<BR> If the
+				smoke is coming from a great distance, it will be spread through a deep layer
+				of the atmosphere. In this case use code figure 04 regardless of how much the
+				visibility is restricted. If the smoke is coming from somewhere fairly close,
+				then it will be pretty much layered in the lower atmosphere. In this case, the
+				visibility has to be 6 mi (10 km) or less before code figure 04 is used. If
+				smoke is the only weather or restriction to visibility in the basic U.S.
+				observation, use code figure 04.<BR> Encode as FU<BR> <BR> </TD> 
+		  </TR> 
+		  <TR> 
+			 <TD>ww = 03-00. Phenomena without significance.</TD> 
+		  </TR> 
+		  <TR> 
+			 <TD><B>03 - Clouds generally forming or developing</B>.<BR> Use code
+				figure 03 only if there are clouds at the time of the observation, but no other
+				weather and both of these conditions exist: (1) The clouds must have increased
+				or become more developed during the past hour (examples of this would be low
+				stratus clouds forming at night, clouds moving into the area in advance of a
+				frontal system, or cumulus clouds growing taller during the day); and (2) there
+				is also some significant past weather to report.<BR> <BR> <B>02 - State of sky
+				on the whole unchanged. This is the characteristic of the sky during the past
+				hour</B>.<BR> Use code figure 02 if the sky is clear at the time of observation
+				and it was also clear during the past hour. Also use code figure 02 if there
+				are clouds at the time of observation, but there had not been any significant
+				change in the clouds during the past hour.<BR> <BR> <B>01 - Clouds generally
+				dissolving or becoming less developed. This is the characteristic of the sky
+				during the past hour</B>.<BR> Use code figure 01 if the sky is clear at the
+				time of observation, but there were clouds during the past hour. Use code
+				figure 01 if there were clouds at the time of observation, but the clouds had
+				dissolved or become less developed during the past hour. Some examples of this
+				are low stratus clouds breaking up in the morning or cumulus clouds beginning
+				to flatten in the afternoon.<BR> <BR> <B>00 - Cloud development not observed or
+				not observable. This is the characteristic of the sky during the past
+				hour</B>.<BR> Use code figure 00 if clouds were not observed during the past
+				hour, whether the sky is clear or not at the time of observation.</TD> 
+		  </TR> 
+		</TABLE></CENTER> 
+	 <H3 ALIGN="CENTER">CODE TABLES</H3> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-7"><FONT>TABLE
+		III-3-7</FONT></A></B><BR></P>
+	 <PRE><B>W<FONT SIZE="-2">l</FONT>W<FONT SIZE="-2">2 </FONT>--   Past Weather Code Specifications in Order of
+          Priority</B>
+
+<B>Code
+<U>figure</U></B>
+  9      Thunderstorm(s), with or without precipitation
+  8      Shower(s)
+  7      Snow, or rain and snow mixed
+  6      Rain
+  5      Drizzle
+  4      Fog or ice fog, or thick haze 
+  3      Sandstorm, duststorm, or blowing snow
+  2      Cloud covering more than 1/2 of the sky throughout the
+         appropriate period
+  1      Cloud covering more than 1/2 of the sky during part of
+         the appropriate period and covering 1/2 or less during
+         part of the period
+  0      Cloud covering 1/2 or less of the sky throughout the
+         appropriate period
+</PRE> <HR> 
+	 <P ALIGN="CENTER"><B><A NAME="tab3-3-8"><FONT>TABLE
+		III-3-8</FONT></A></B><BR></P> 
+	 <P ALIGN="CENTER"><IMG SRC="../graphics/tab3-3-8.gif" BORDER="0"
+		WIDTH="531" HEIGHT="568"> </P><HR> 
+	 <P ALIGN="CENTER"><FONT SIZE="-1"><B><A NAME="tab3-3-9"><FONT
+		SIZE="+1">TABLE III-3-9</FONT></A></B><BR> </FONT><BR><IMG
+		SRC="../graphics/tab3-3-9.gif" BORDER="0" WIDTH="519" HEIGHT="734"> </P><HR> 
+	 <P ALIGN="CENTER"><B><A NAME="ta3-3-10"><FONT>TABLE
+		III-3-10</FONT></A></B><BR> </P> 
+	 <P ALIGN="CENTER"><IMG SRC="../graphics/ta3-3-10.gif" BORDER="0"
+		WIDTH="500" HEIGHT="609"> </P> </BODY>
+</HTML>

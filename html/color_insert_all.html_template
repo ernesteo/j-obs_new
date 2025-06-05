@@ -1,0 +1,12 @@
+<tr>
+<td>
+  <h3 style="text-align:center;">
+    <input disabled size="9" style="font-weight: bold ; color: black ;
+            background-color: cyan" value="REQUIRED">
+    <input disabled size="24" style="font-weight: bold ; color: black ;
+            background-color: yellow" value="REQUIRED IF OBSERVED">
+    <input disabled size="9" style="font-weight: bold ; color: black ;
+            background-color: silver" value="OPTIONAL">
+  </h3>
+</td>
+</tr>

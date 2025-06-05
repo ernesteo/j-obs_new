@@ -1,0 +1,26 @@
+<tr>
+<td>
+<!-- *********************************** WMO enocded data upload *************************************** -->
+  <fieldset>
+  <legend><b>WMO encoded message (#RPT_TYPE#)</b></legend>
+  <table class="textsize">
+  <tr>
+  <td>
+    Single or multiple WMO formatted reports can be submitted.
+    <br>
+    You can upload the data in a plain text file
+    <br>
+    <input tabindex="1" size="77" type="file" name="upload_wmo_file" id="upload_wmo_file" onchange="check_file_ext(this.id,'txt');">
+    <input onclick="clearFileInput()" type="button" value="Clear" />
+    <br>
+    <b>or</b>
+    <br>
+    or enter as text.
+    <br>
+    <textarea tabindex="1" rows="4" cols="100" name="upload_wmo_text" id="upload_wmo_text" onblur="check_wmo_message_state(this.id,'upload_wmo_text');"></textarea>
+  </td>
+  </tr>
+  </table>
+  </fieldset>
+</td>
+</tr>
