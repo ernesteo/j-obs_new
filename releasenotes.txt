@@ -1,0 +1,65 @@
+$HeadURL:$, $Id:$
+
+Classification: unclassified
+
+10July2019 *** RELEASE 1.2.1 ***
+10July2019 - Add ship location entry web page
+
+12July2019 *** RELEASE 1.2.2 ***
+12July2019 - Redo latitude and longitude entries as per Matt Lauridsreon's instructions.
+
+26August2019 *** RELEASE 1.2.3 ***
+26August2019 - Add documenation of MOBTAF
+
+10Feb2020 *** RELEASE 1.2.5 ***
+10Feb2020 - Updating ship reference list.
+
+18Mar2020 *** RELEASE 1.2.6 ***
+    Removed j-obs_training from subversion
+
+    Removed versions and version code
+
+    Removed taf_ship code
+
+    Removed references to Mcgregor's home directories
+
+    Modified code to get rid of as many bugs as possible in SonarQub.
+
+    Dynamically creating the ship dropdown box and ship name list.
+
+16Nov2020 *** RELEASE 1.2.7 ***
+    Added the CGI object instantiation in cgi-bin/data_display_generator.cgi
+
+01Apr2021 *** RELEASE 1.2.8 ***
+    Bug fix in data_display_generator.cgi and data_display_short_generator.cgi - file name had "\n" at its end.
+
+28Sep2022 *** RELEASE 1.2.9 ***
+    Added;
+       Aircraft XBT page
+       cgi-bin/origin_lnd_insert.cgi
+       cgi-bin/xbt.cgi
+       js/xbt_clas_lists.js
+       js/xbt_unclas_lists.js
+ 
+    Removed;
+       html/origin_insert.html_template
+       html/origin_lnd_insert.html_template
+
+23Nov2022 *** RELEASE 1.2.10 ***
+    Replaced wmo_id with rpt_id
+    Removed repetative code and instantiations
+    Repaired bugs dealing with csgn missing errors
+
+07Jul2023 *** RELEASE 1.2.11 ***
+    Added stn_id and stn_name to hidden attributes for xbt form data.
+    This allows for properly named files, which in turn allows
+    the data to display.
+    Removed setup and initialize subroutines from wmo_routines.pm.
+    Removed setup and initialize calls from relevant cgi-scripts.
+
+06Dec2023 *** RELEASE 1.2.12 ***
+    Due to the lack of pointers on RHEL8, replaced all references from
+    /app/cov_plots/ to /app/cov_plots2/  for all of the files under lib.
+
+11Sep2024 *** RELEASE 1.2.13 ***
+    Updated for RHEL8 paths.  Repaired bugs found in "lib/sys_info.pm", "cgi-bin/usage*"

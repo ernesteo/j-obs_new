@@ -1,0 +1,113 @@
+----- Point of Origin ----
+observer title        other
+observer              ESTIOCA
+email                 
+csgn_name             NKAY
+ship_title            USCGC
+ship_name             KIMBALL
+-- Time of Observationn ---
+obs_yr                2021
+obs_mo                3
+obs_day               31
+obs_hr                12
+obs_min               0
+
+-- Time of Submission ----
+year                  2021
+month                 3
+day                   31
+hour                  17
+minute                17
+
+------- Security --------
+clas_type             U
+cls_ath               
+cls_rsn               
+cls_doc               
+cls_cvt               
+dcls_tday             
+dcls_yr               
+dcls_mon              
+dcls_day              
+dcls_txt              
+
+------Transmission -------
+server_send_time      2021_3_31_17_10_33
+client_receive_time   2021_3_31_12_10_41
+client_send_time      2021_3_31_17_15_35
+server_receive_time   2021_3_31_17_17_12
+
+----- Browser Type ---------
+Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+---------- Part 1 ----------
+rpt_typ_id            1
+wnd_dir               078
+wnd_spd               18
+wnd_mthd              measured
+wnd_gst_type          G
+wnd_gst               
+wnd_vrb_1             
+wnd_vrb_2             
+horz_sfc_vsby         10
+horz_sfc_vsby_id      98
+horz_sfc_vsby_type    
+prsnt_wx              
+sky_cdn               
+air_temp_sign         
+air_temp              26
+dwpt_sign             
+dwpt                  26
+wet_bulb_temp_sign    
+wet_bulb_temp         23
+alt_set_type          
+alt_set               2976
+rmrks                 
+stn_lvl_pres_type     
+stn_lvl_pres          M
+sea_lvl_pres          079
+tot_cld_amt_id        4
+lat                   13
+lat_sign              N
+lon                   165
+lon_sign              E
+mv_plfm_dir_1         087
+mv_plfm_spd_1         15
+sea_temp              27
+wnd_wav_ht            
+wnd_wav_per           
+pri_swl_wav_dir       
+pri_swl_wav_ht        
+pri_swl_wav_per       
+scdy_swl_wav_dir      
+scdy_swl_wav_ht       
+scdy_swl_wav_per      
+---------- Part 2 ----------
+wnd_id                4
+stn_type_id           3
+cld_base_ht_id        /
+pres_tdcy_char_id     
+pres_tdcy_amt         
+pres_wx_id            
+past_wx_id_1          
+past_wx_id_2          
+low_cld_amt_id        /
+low_cld_type_id       /
+mid_cld_type_id       /
+hi_cld_type_id        /
+mv_plfm_dir_id        /
+mv_plfm_spd_id        /
+ice_accr_cause_id     
+ice_accr_thkn         
+ice_accr_rate_id      
+sea_ice_conc_id       
+icing_rmrk            
+ice_dev_stage_id      
+ice_type_amt_id       
+ice_edge_brg_id       
+ice_sit_id            
+ice_rmrk              
+----------- Misc. ------i----
+stn_ht                0
+rel_hum               
+wet_bulb_temp_mthd    0
+sea_temp_mthd         0

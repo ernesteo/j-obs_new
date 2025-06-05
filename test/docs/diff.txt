@@ -1,0 +1,521 @@
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/counts.cgi trunk/cgi-bin/counts.cgi
+9c9
+< use lib "/opt/global/perllib";
+---
+> use lib "/gpfs/apps/webservices";
+15c15
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+72c72
+< my $shp_ref_lib = "/u/curr/etc/static/app/msl/navy_shp_ref_lib";
+---
+> my $shp_ref_lib = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl/navy_shp_ref_lib";
+132c132
+< #$dir="/opt/global/webservices/apache/app/j-obs/dynamic/archive";
+---
+> #$dir="/gpfs/apps/webservices/apache/app/j-obs/dynamic/archive";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/data_display.cgi trunk/cgi-bin/data_display.cgi
+9c9
+< use lib "/opt/global/perllib";
+---
+> use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+15c15
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+64c64
+< my $shp_ref_lib = "/u/curr/etc/static/app/msl/navy_shp_ref_lib";
+---
+> my $shp_ref_lib = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl/navy_shp_ref_lib";
+145c145
+< #$dir="/opt/global/webservices/apache/app/j-obs/dynamic/archive";
+---
+> #$dir="/gpfs/apps/webservices/apache/app/j-obs/dynamic/archive";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/data_display_generator.cgi trunk/cgi-bin/data_display_generator.cgi
+14c14
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+27,28c27,28
+< my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+< my $PROGBIN = "/u/ops/bin";
+---
+> my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+> my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/data_display_short.cgi trunk/cgi-bin/data_display_short.cgi
+9c9
+< use lib "/opt/global/perllib";
+---
+> use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+15c15
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+79c79
+< my $shp_ref_lib = "/u/curr/etc/static/app/msl/navy_shp_ref_lib";
+---
+> my $shp_ref_lib = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl/navy_shp_ref_lib";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/data_display_short_generator.cgi trunk/cgi-bin/data_display_short_generator.cgi
+14c14
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+27,28c27,28
+< my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+< my $PROGBIN = "/u/ops/bin";
+---
+> my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+> my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/origin_insert.cgi trunk/cgi-bin/origin_insert.cgi
+14c14
+< my $ship_ref_file = "/u/curr/etc/static/app/msl/navy_shp_ref_lib";
+---
+> my $ship_ref_file = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl/navy_shp_ref_lib";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/origin_lnd_insert.cgi trunk/cgi-bin/origin_lnd_insert.cgi
+16c16
+< my $TD;
+---
+> my $TD = " ";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/ship_name_list.cgi trunk/cgi-bin/ship_name_list.cgi
+9c9
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+20c20
+< $file_nm = "/u/curr/etc/static/app/msl/navy_shp_ref_lib";
+---
+> $file_nm = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl/navy_shp_ref_lib";
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/usage_survey.cgi trunk/cgi-bin/usage_survey.cgi
+1,2c1
+< #!/usr/bin/perl -T
+< 
+---
+> #!/usr/bin/perl -wT
+5,6c4,7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+< use Validate qw(validate);
+---
+> use lib qw( /usr/share/perl5/vendor_perl 
+>             /gpfs/apps/webservices/apache/app/common/lib 
+>             /gpfs/opsrun/ops/ops/Cur/lib/perllib 
+>             ../lib );
+10d10
+< use lib "/opt/global/perllib";
+12d11
+< use lib "../lib";
+16,17c15,16
+< $ENV{'PATH'} = '/bin:/usr/bin';
+< delete @ENV{'IFS', 'CDPATH', 'BASH_ENV'};
+---
+> my $check_email;
+> my $clas_banner = getClasBnr();
+19c18,19
+< $clas_banner = getClasBnr();
+---
+> $ENV{'PATH'} = '/usr/bin';
+> delete @ENV{'IFS', 'CDPATH', 'BASH_ENV'};
+diff -r tags/1.2.12-2023-12-06-ccp11551/cgi-bin/usage_survey_proc.cgi trunk/cgi-bin/usage_survey_proc.cgi
+1c1
+< #!/usr/bin/perl -T
+---
+> #!/usr/bin/perl -wT
+5c5,8
+< use lib "/opt/global/perllib";
+---
+> use lib qw( /gpfs/opsrun/ops/ops/Cur/lib/perllib
+>             /gpfs/apps/webservices/apache/app/common/lib
+> 	    ../lib
+> 	  );
+7,8d9
+< use lib "../lib";
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+12c13
+< $ENV{'PATH'} = '/bin:/usr/bin';
+---
+> $ENV{'PATH'} = '/usr/bin';
+25,27c26,28
+< #my $email = $q->param("email");
+< my $email;
+< if( !defined( validate( $q->param("email"), 9 ) ) )
+---
+> 
+> my $email = $q->param("email");
+> if( !defined( validate( $email, 9 ) ) )
+31,34d31
+< else
+< {
+<   $email = $q->param("email");
+< }
+39c36
+< my ( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdat ) = gmtime;
+---
+> my( $sec, $min, $hour, $mday, $mon, $year, $wday, $yday, $isdat ) = gmtime;
+69,72c66,67
+< my $devlevel;
+< my $claslevel;
+< $devlevel = getDevLevel();
+< $claslevel = getHostClass();
+---
+> my $level = getDevLevel();
+> my $clas  = getHostClass();
+74c69
+< if( getHostClass() eq "unclas" )
+---
+> if( $clas eq "unclas" )
+77c72
+<   if( getDevLevel() eq "alpha" | getDevLevel() eq "beta" )
+---
+>   if( $level eq "alpha" | $level eq "beta" )
+86,87c81,82
+<     print( $MAIL "DEV LEVEL: $devlevel\n" );
+<     print( $MAIL "CLAS LEVEL: $claslevel\n" );
+---
+>     print( $MAIL "DEV LEVEL: $level\n" );
+>     print( $MAIL "CLAS LEVEL: $clas\n" );
+97,98c92,93
+<     print "DEV LEVEL: $devlevel<br>\n";
+<     print "CLAS LEVEL: $claslevel<br>\n";
+---
+>     print "DEV LEVEL: $level<br>\n";
+>     print "CLAS LEVEL: $clas<br>\n";
+112,113c107,108
+<     print( $MAIL "DEV LEVEL: $devlevel\n" );
+<     print( $MAIL "CLAS LEVEL: $claslevel\n" );
+---
+>     print( $MAIL "DEV LEVEL: $level\n" );
+>     print( $MAIL "CLAS LEVEL: $clas\n" );
+129c124
+< elsif( getHostClass() eq "secret" )
+---
+> elsif( $clas eq "secret" )
+141,142c136,137
+<     print( $MAIL "DEV LEVEL: $devlevel\n" );
+<     print( $MAIL "CLAS LEVEL: $claslevel\n" );
+---
+>     print( $MAIL "DEV LEVEL: $level\n" );
+>     print( $MAIL "CLAS LEVEL: $clas\n" );
+152,153c147,148
+<     print "DEV LEVEL: $devlevel<br>\n";
+<     print "CLAS LEVEL: $claslevel<br>\n";
+---
+>     print "DEV LEVEL: $level<br>\n";
+>     print "CLAS LEVEL: $clas<br>\n";
+167,168c162,163
+<     print( $MAIL "DEV LEVEL: $devlevel\n" );
+<     print( $MAIL "CLAS LEVEL: $claslevel\n" );
+---
+>     print( $MAIL "DEV LEVEL: $level\n" );
+>     print( $MAIL "CLAS LEVEL: $clas\n" );
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/bathy_csv_routines.pm trunk/lib/bathy_csv_routines.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+41c41
+<   use lib "/opt/global/perllib";
+---
+>   use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+83c83
+<     printf( $FILE "%s\n","IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_unclassified.png" );
+---
+>     printf( $FILE "%s\n","IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_unclassified.png" );
+87c87
+<     printf( $FILE "%s\n","IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_confidential.png" );
+---
+>     printf( $FILE "%s\n","IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_confidential.png" );
+91c91
+<     printf( $FILE "%s\n","IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_secret.png" );
+---
+>     printf( $FILE "%s\n","IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_secret.png" );
+95c95
+<     printf( $FILE "%s\n","IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white.png" );
+---
+>     printf( $FILE "%s\n","IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white.png" );
+112c112
+<   my $INPUT = `/u/ops/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+---
+>   my $INPUT = `/gpfs/opsrun/ops/ops/Cur/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/bufr_routines.pm trunk/lib/bufr_routines.pm
+7c7
+< use lib qw( /opt/global/webservices/apache/app/common/lib );
+---
+> use lib qw( /gpfs/apps/webservice/apache/app/common/lib );
+9c9
+< use lib "/opt/global/perllib";
+---
+> use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+556,557c556,557
+<   my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+<   my $PROGBIN = "/u/ops/bin";
+---
+>   my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+>   my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/form_routines.pm trunk/lib/form_routines.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+82c82
+<     use lib "/opt/global/perllib";
+---
+>     use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+145c145
+<     printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_unclassified.png" );
+---
+>     printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_unclassified.png" );
+149c149
+<     printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_confidential.png" );
+---
+>     printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_confidential.png" );
+153c153
+<     printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_secret.png" );
+---
+>     printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_secret.png" );
+157c157
+<     printf( $FILE "%s\n","IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white.png" );
+---
+>     printf( $FILE "%s\n","IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white.png" );
+174c174
+<   my $INPUT = `/u/ops/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+---
+>   my $INPUT =`/gpfs/opsrun/ops/ops/Cur/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/loc_routines.pm trunk/lib/loc_routines.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+20c20
+<     use lib "/opt/global/perllib";
+---
+>     use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+602c602
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_unclassified.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_unclassified.png" );
+606c606
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_confidential.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_confidential.png" );
+610c610
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_secret.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_secret.png" );
+614c614
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white.png" );
+632c632
+<     my $INPUT = `/u/ops/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1` ;
+---
+>     my $INPUT = `/gpfs/opsrun/ops/ops/Cur/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+770,771c770,771
+<   my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+<   my $PROGBIN = "/u/ops/bin";
+---
+>   my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+>   my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/sys_info.pm trunk/lib/sys_info.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+38,61c38,59
+<    if (defined $level) { return $level; }
+< 
+<    my $localHost = getHostName();
+< 
+<    $level = substr( $localHost, 2, 1 );
+<    if ( $level eq 'd' )
+<    {
+<       return "alpha";
+<    }
+<    elsif ( $level eq 'a' )
+<    {
+<       return "alpha";
+<    }
+<    elsif ( $level eq 'b' )
+<    {
+<       return "beta";
+<    }
+<    elsif ( $level eq 'o' )
+<    {
+<       return "ops";
+<    }
+<    elsif ( $level eq 'p' )
+<    {
+<       return "prealpha";   # pre-alpha
+---
+>    
+>    if( ! defined $level )
+>    { 
+>    	my $localHost = getHostName();
+>    	my $flag = substr( $localHost, 2, 1 );
+> 
+>    	if( $flag eq 'd' || $flag eq 'a' )
+>    	{
+>       		$level = "alpha";
+>    	}
+>    	elsif ( $flag eq 'b' )
+>    	{
+>       		$level = "beta";
+>    	}
+>    	elsif ( $flag eq 'o' )
+>    	{
+>       		$level = "ops";
+>    	}
+>    	elsif ( $flag eq 'p' )
+>    	{
+>       		$level = "prealpha";   # pre-alpha
+>    	}
+63c61
+<    return "";
+---
+>    return( $level );
+68,80c66,77
+< 
+<    my $localHost = getHostName();
+< 
+<    #-- check for which ATOS2 host level
+<    my $level;
+<    if (substr( $localHost, 0, 2) eq 'a4')
+<    {
+<       $level = substr( $localHost, 3, 1 );
+<    }
+<    elsif (substr( $localHost, 0, 2) eq 'a1')
+<    {
+<       $level = substr( $localHost, 3, 1 );
+<    }
+---
+>    my $class;
+>    my $localHost = getHostName(); #-- check for which ATOS2 host level
+>    my $flag = substr( $localHost, 3,1 );
+>    if ( $flag eq 'u' )
+>    {
+>       $class = "unclas";
+>    }
+>    #   elsif( $flag eq 'c' )
+>    #{
+>    #$class = "confid";
+>    #}
+>    #elsif ( $flag eq 's' )
+83,93c80
+<       $level = substr( $localHost, 4, 1 );
+<    }
+<    if ( $level eq 'u' )
+<    {
+<       return "unclas";
+<       # TEST for classified
+<       # return "secret";
+<    }
+<    elsif ( $level eq 's' )
+<    {
+<       return "secret";
+---
+>       $class = "secret";
+95c82
+<    return 0;
+---
+>    return( $class );
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/web_routines.pm trunk/lib/web_routines.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+16c16
+<   use lib "/opt/global/perllib";
+---
+>   use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+76c76
+<   use lib "/opt/global/perllib";
+---
+>   use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+137c137
+<   use lib "/opt/global/perllib";
+---
+>   use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/wmo_lnd_routines.pm trunk/lib/wmo_lnd_routines.pm
+7c7
+< use lib qw(/opt/global/webservices/apache/app/common/lib);
+---
+> use lib qw(/gpfs/apps/webservices/apache/app/common/lib);
+62c62
+<     use lib "/opt/global/perllib";
+---
+>     use lib "/gpfs/opsrun/ops/ops/Cur/lib/perllib";
+879,880c879,880
+<   my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+<   my $PROGBIN = "/u/ops/bin";
+---
+>   my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+>   my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/lib/wmo_routines.pm trunk/lib/wmo_routines.pm
+7c7
+< use lib qw( /opt/global/webservices/apache/app/common/lib /opt/global/perllib );
+---
+> use lib qw( /gpfs/apps/webservices/apache/app/common/lib /gpfs/opsrun/ops/ops/Cur/lib/perllib );
+42c42
+< $static_msl_dir = "/u/curr/etc/static/app/msl";
+---
+> $static_msl_dir = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/msl";
+1070,1071c1070,1071
+<   my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+<   my $PROGBIN = "/u/ops/bin";
+---
+>   my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+>   my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+1300c1300
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_unclassified.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_unclassified.png" );
+1304c1304
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_confidential.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_confidential.png" );
+1308c1308
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white_secret.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white_secret.png" );
+1312c1312
+<       printf( $FILE "%s\n", "IMAGE_BG=/u/ops/etc/static/app/cov_plots2/images/basic_white.png" );
+---
+>       printf( $FILE "%s\n", "IMAGE_BG=/gpfs/opsrun/ops/ops/etc/Cur/static/app/cov_plots2/images/basic_white.png" );
+1331c1331
+<     #   my $INPUT = `ls -l ../dynamic/temp/location_$$.list `;
+---
+>     #   my $INPUT = `ls -l ../dynamic/temp/location_$$.list`;
+1337c1337
+<     #   my $INPUT = `cp ../dynamic/temp/location_$$.list /opt/global/webservices/apache/app/j-obs_testing/dynamic/temp/. 2>&1`;
+---
+>     #   my $INPUT = `cp ../dynamic/temp/location_$$.list /gpfs/apps/webservices/apache/app/j-obs_testing/dynamic/temp/. 2>&1`;
+1339c1339
+<     #   my $INPUT = `ls -l /opt/global/webservices/apache/app/j-obs_testing/dynamic/temp/location_$$.list 2>&1`;
+---
+>     #   my $INPUT = `ls -l /gpfs/apps/webservices/apache/app/j-obs_testing/dynamic/temp/location_$$.list 2>&1`;
+1345c1345
+<     #   $INPUT = `cp ../dynamic/temp/coverage_plot_$$.in /opt/global/webservices/apache/app/j-obs_testing/dynamic/temp/. 2>&1`;
+---
+>     #   $INPUT = `cp ../dynamic/temp/coverage_plot_$$.in /gpfs/apps/webservices/apache/app/j-obs_testing/dynamic/temp/. 2>&1`;
+1347c1347
+<     #   my $INPUT = `ls -l /opt/global/webservices/apache/app/j-obs_testing/dynamic/temp/coverage_plot_$$.in 2>&1`;
+---
+>     #   my $INPUT = `ls -l /gpfs/apps/webservices/apache/app/j-obs_testing/dynamic/temp/coverage_plot_$$.in 2>&1`;
+1354c1354
+<     $INPUT = `/u/ops/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+---
+>     $INPUT = `/gpfs/opsrun/ops/ops/Cur/bin/coverage_plot ../dynamic/temp/coverage_plot_$$.in 2>&1`;
+1379c1379
+<     #   $INPUT = `ls -l /opt/global/webservices/apache/app/j-obs_testing/dynamic/temp/location_check_plot_$$.png 2>&1`;
+---
+>     #   $INPUT = `ls -l /gpfs/apps/webservices/apache/app/j-obs_testing/dynamic/temp/location_check_plot_$$.png 2>&1`;
+1551,1552c1551,1552
+<   my $ETC_DIR = "/u/ops/etc/static/app/j-obs_batch";
+<   my $PROGBIN = "/u/ops/bin";
+---
+>   my $ETC_DIR = "/gpfs/opsrun/ops/ops/etc/Cur/static/app/j-obs_batch";
+>   my $PROGBIN = "/gpfs/opsrun/ops/ops/Cur/bin";
+diff -r tags/1.2.12-2023-12-06-ccp11551/test/upload_files/kkyy.txt trunk/test/upload_files/kkyy.txt
+9c9
+< 20041 16001 99999 41052=
+---
+> 20041 16001 99999 41052
